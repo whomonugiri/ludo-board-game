@@ -5,6 +5,7 @@ var bdice = document.getElementsByClassName('b-dice');
 var ydice = document.getElementsByClassName('y-dice');
 
 
+
 var dicesound= document.getElementById("diceSound"); 
 var killedsound= document.getElementById("killedSound"); 
 var winsound= document.getElementById("winSound"); 
@@ -127,7 +128,14 @@ if(pp[0]=='b'){
 
 //alert(playerzone.length);
 
-
+gdice[0].style.display="none";
+rdice[0].style.display="none";
+ydice[0].style.display="none";
+bdice[0].style.display="none";
+gdice[1].style.display="none";
+ydice[1].style.display="none";
+bdice[1].style.display="none";
+rdice[1].style.display="none";
 
 
 
@@ -167,6 +175,9 @@ function winner(pl){
             rdice[1].style.display="none";
             var winno = winpos.indexOf('r')+1;
             playerroom[0].innerHTML="<img src='crown"+winno+".png' class='crown'>";
+            pmove=7;
+            moves[0]=0;
+            diceRotation(0);
         }
     }
     if(pl=='g'){
@@ -177,6 +188,9 @@ function winner(pl){
             gdice[1].style.display="none";
             var winno = winpos.indexOf('g')+1;
             playerroom[1].innerHTML="<img src='crown"+winno+".png' class='crown'>";
+             moves[1]=0;
+            pmove=7;
+            diceRotation(1);
         }
     }
     if(pl=='b'){
@@ -187,6 +201,9 @@ function winner(pl){
             bdice[1].style.display="none";
             var winno = winpos.indexOf('b')+1;
             playerroom[2].innerHTML="<img src='crown"+winno+".png' class='crown'>";
+             moves[3]=0;
+            pmove=7;
+            diceRotation(3);
         }
     }
     if(pl=='y'){
@@ -198,6 +215,9 @@ function winner(pl){
             
             var winno = winpos.indexOf('y')+1;
             playerroom[3].innerHTML="<img src='crown"+winno+".png' class='crown'>";
+             moves[2]=0;
+            pmove=7;
+            diceRotation(2);
         }
     }
 }
@@ -276,7 +296,7 @@ function motionOn(pno){
             y[i].style.zIndex="0";
     }
     }else{
-       for(i=0;i<4;i++){
+       for(i=0;i<r.length;i++){
            
               r[i].classList.remove("animate__animated","animate__tada");  
               y[i].classList.remove("animate__animated","animate__tada");  
@@ -307,15 +327,196 @@ function motionOn(pno){
 //        }
 //    }
 //}
+var pmove;
+function diceRotation(pno){
+   
+     
+    if(pno==0){
+        if(pp.includes('r')){
+            
+        
+        if(winpos.includes('r')){
+            diceRotation(1);
+            return 0;
+        }    
+       
+        setTimeout(function(){
+            
+            if(pmove==6 || pmove==7){
+                return 0;
+            }
+           
+            if(rstate.includes(1) && moves[0]>0){
+                
+                
+            }else{
+               
+               rdice[0].style.display="none";
+                rdice[1].style.display="none";
+              if(pp.includes('g')){
+                gdice[0].style.display="";
+                gdice[1].style.display="";    
+              }else if(pp.includes('y')){
+                 ydice[0].style.display="";
+                ydice[1].style.display="";  
+              }else if(pp.includes('b')){
+                  bdice[0].style.display="";
+                bdice[1].style.display=""; 
+              }
+                
+            }
+           
+                    
+                
+            }
+        ,800);
+            
+        }else{
+            pmove=7;
+            diceRotation(1);
+        }
+    }
+//    }
+    
+    if(pno==1){
+        if(pp.includes('g')){
+            
+        
+        if(winpos.includes('g')){
+            diceRotation(2);
+            return 0;
+        }
+        
+            setTimeout(function(){
+            if(pmove==6 || pmove==7){
+                return 0;
+            }
+             
+            if(gstate.includes(1) && moves[1]>0){
+                
+            }else{
+               gdice[0].style.display="none";
+                gdice[1].style.display="none";
+                if(pp.includes('y')){
+                 ydice[0].style.display="";
+                ydice[1].style.display="";  
+              }else if(pp.includes('b')){
+                  bdice[0].style.display="";
+                bdice[1].style.display=""; 
+              }else if(pp.includes('r')){
+                  rdice[0].style.display="";
+                rdice[1].style.display=""; 
+              }  
+            }
+           
+                    
+                
+            }
+        ,800);
+        }else{
+            pmove=7;
+            diceRotation(2);
+        }
+    }
+                   
+    if(pno==2){
+        if(pp.includes('y')){
+            
+        
+        if(winpos.includes('y')){
+            diceRotation(3);
+            return 0;
+        }
+       
+        setTimeout(function(){
+            if(pmove==6 || pmove==7){
+                return 0;
+            }
+            
+            
+            if(ystate.includes(1) && moves[2]>0){
+                
+            }else{
+               ydice[0].style.display="none";
+                ydice[1].style.display="none";
+              
+                if(pp.includes('b')){
+                  bdice[0].style.display="";
+                bdice[1].style.display=""; 
+              }else if(pp.includes('r')){
+                  rdice[0].style.display="";
+                rdice[1].style.display=""; 
+              } else if(pp.includes('g')){
+                  gdice[0].style.display="";
+                gdice[1].style.display=""; 
+              }
+            }
+           
+                    
+                
+            }
+        ,800);
+        }else{
+            pmove=7;
+            diceRotation(3);
+        }
+        
+    }
+    
+    if(pno==3){
+        if(pp.includes('b')){
+            
+        
+        if(winpos.includes('b')){
+            diceRotation(0);
+            return 0;
+        }
+       
+      setTimeout(function(){
+            if(pmove==6 || pmove==7){
+                
+                return 0;
+            }
+              
+            
+            if(bstate.includes(1) && moves[3]>0){
+                
+            }else{
+               bdice[0].style.display="none";
+                bdice[1].style.display="none";
+                if(pp.includes('r')){
+                  rdice[0].style.display="";
+                rdice[1].style.display=""; 
+              }else if(pp.includes('g')){
+                  gdice[0].style.display="";
+                gdice[1].style.display=""; 
+              }else if(pp.includes('y')){
+                  ydice[0].style.display="";
+                ydice[1].style.display=""; 
+              }  
+            }
+           
+                    
+                
+            }
+        ,800);
+        
+    }else{
+        pmove=7;
+        diceRotation(0);
+    }
+}
+}
 
 function dice(obj,pno){
     dicesound.play();
     var num=Math.floor((Math.random() * 6) + 1);
+    pmove=num;
     obj.innerHTML=num;
 //    if(num==6){
        moves[pno]=num;
 motionOn(pno);
-    
+    diceRotation(pno);
 //if(pno==0){
 //  if(!rstate.includes(1)){
 //        
@@ -358,8 +559,9 @@ function kill(pno,p){
         var i;
         for(i=0;i<4;i++){
            var blue = '<span onclick="moveblue(this,'+i+')" class="rp material-icons b" style="z-index: 0;">stars</span>'; 
-           var green = '<span onclick="movegreen(this,'+i+')" class="rp material-icons g">stars</span>'; 
-           var yellow = '<span onclick="moveyellow(this,'+i+')" class="rp material-icons y">stars</span>'; 
+           var green = '<span onclick="movegreen(this,'+i+')" class="rp material-icons g" style="z-index: 0;">stars</span>'; 
+           
+           var yellow = '<span onclick="moveyellow(this,'+i+')" class="rp material-icons y" style="z-index: 0;">stars</span>'; 
             
             
             
@@ -372,6 +574,8 @@ function kill(pno,p){
             gstate[i]=0;
             playerzone[4+i].innerHTML=green;
             console.log("green"+i+" is dead !");
+            pmove=7;
+            diceRotation(0);
             return 1427;
         }else if(check==blue){
             killedsound.play();
@@ -380,6 +584,8 @@ function kill(pno,p){
             bstate[i]=0;
             playerzone[8+i].innerHTML=blue;
             console.log("blue"+i+" is dead !");
+            pmove=7;
+            diceRotation(0);
             return 1427;
         }else if(check==yellow){
             killedsound.play();
@@ -388,6 +594,8 @@ function kill(pno,p){
             ystate[i]=0;
             playerzone[12+i].innerHTML=yellow;
             console.log("yellow"+i+" is dead !");
+            pmove=7;
+            diceRotation(0);
             return 1427;
         } 
         }
@@ -416,6 +624,8 @@ function kill(pno,p){
             rstate[i]=0;
             playerzone[0+i].innerHTML=red;
             console.log("red"+i+" is dead !");
+            pmove=7;
+            diceRotation(1);
             return 1427;
         }else if(check==blue){
             killedsound.play();
@@ -424,6 +634,8 @@ function kill(pno,p){
             bstate[i]=0;
             playerzone[8+i].innerHTML=blue;
             console.log("blue"+i+" is dead !");
+            pmove=7;
+            diceRotation(1);
             return 1427;
         }else if(check==yellow){
             killedsound.play();
@@ -432,6 +644,8 @@ function kill(pno,p){
             ystate[i]=0;
             playerzone[12+i].innerHTML=yellow;
             console.log("yellow"+i+" is dead !");
+            pmove=7;
+            diceRotation(1);
             return 1427;
         } 
         }
@@ -460,6 +674,8 @@ function kill(pno,p){
             gstate[i]=0;
             playerzone[4+i].innerHTML=green;
             console.log("green"+i+" is dead !");
+            pmove=7;
+            diceRotation(3);
             return 1427;
         }else if(check==red){
             killedsound.play();
@@ -468,6 +684,8 @@ function kill(pno,p){
             rstate[i]=0;
             playerzone[0+i].innerHTML=red;
             console.log("red"+i+" is dead !");
+            pmove=7;
+            diceRotation(3);
             return 1427;
         }else if(check==yellow){
             killedsound.play();
@@ -476,6 +694,8 @@ function kill(pno,p){
             ystate[i]=0;
             playerzone[12+i].innerHTML=yellow;
             console.log("yellow"+i+" is dead !");
+            pmove=7;
+            diceRotation(3);
             return 1427;
         } 
         }
@@ -501,6 +721,8 @@ function kill(pno,p){
             gstate[i]=0;
             playerzone[4+i].innerHTML=green;
             console.log("green"+i+" is dead !");
+            pmove=7;
+            diceRotation(2);
             return 1427;
         }else if(check==blue){
             killedsound.play();
@@ -509,6 +731,8 @@ function kill(pno,p){
             bstate[i]=0;
             playerzone[8+i].innerHTML=blue;
             console.log("blue"+i+" is dead !");
+            pmove=7;
+            diceRotation(2);
             return 1427;
         }else if(check==red){
             killedsound.play();
@@ -517,6 +741,8 @@ function kill(pno,p){
             rstate[i]=0;
             playerzone[0+i].innerHTML=red;
             console.log("red"+i+" is dead !");
+            pmove=7;
+            diceRotation(2);
             return 1427;
         } 
         }
@@ -544,7 +770,7 @@ function movered(obj,pno){
             inoutsound.play();
             totalpr-=1;
             winner('r');
-            obj.remove();
+            obj.style.display="none";
             return 0;
             
         }
@@ -578,6 +804,7 @@ function movered(obj,pno){
            
         
     }
+    diceRotation(0);
 }
 
 function movegreen(obj,pno){
@@ -595,7 +822,7 @@ function movegreen(obj,pno){
             inoutsound.play();
             totalpg-=1;
             winner('g');
-            obj.remove();
+            obj.style.display="none";
             return 0;
         }
          motionOn(5);
@@ -628,6 +855,7 @@ function movegreen(obj,pno){
         
     }
 //    activePlayer(1);
+    diceRotation(1);
 }
 
 
@@ -647,7 +875,7 @@ function moveblue(obj,pno){
     inoutsound.play();
             totalpb-=1;
             winner('b');
-            obj.remove();
+            obj.style.display="none";
             return 0;
         }
         motionOn(5);
@@ -680,6 +908,7 @@ function moveblue(obj,pno){
         
     }
 //    activePlayer(3);
+    diceRotation(3);
 }
 
 
@@ -699,7 +928,7 @@ function moveyellow(obj,pno){
 inoutsound.play();
             totalpy-=1;
             winner('y');
-            obj.remove();
+            obj.style.display="none";
             return 0;
         }
         motionOn(5);
@@ -732,4 +961,5 @@ inoutsound.play();
         
     }
 //    activePlayer(2);
+    diceRotation(2);
 }
