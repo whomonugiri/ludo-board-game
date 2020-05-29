@@ -770,6 +770,7 @@ function movered(obj,pno){
             inoutsound.play();
             totalpr-=1;
             winner('r');
+            rstate[pno]=0;
             obj.style.display="none";
             return 0;
             
@@ -823,6 +824,7 @@ function movegreen(obj,pno){
             totalpg-=1;
             winner('g');
             obj.style.display="none";
+            gstate[pno]=0;
             return 0;
         }
          motionOn(5);
@@ -876,6 +878,7 @@ function moveblue(obj,pno){
             totalpb-=1;
             winner('b');
             obj.style.display="none";
+            bstate[pno]=0;
             return 0;
         }
         motionOn(5);
@@ -929,6 +932,7 @@ inoutsound.play();
             totalpy-=1;
             winner('y');
             obj.style.display="none";
+            ystate[pno]=0;
             return 0;
         }
         motionOn(5);
