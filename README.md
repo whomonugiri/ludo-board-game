@@ -7,6 +7,6 @@
 <p>This is Responsive for Both Mobile and Laptop/Pc</p>
 
 You can play it at
--https://whomonugiri.github.io/ludo-board/
+-https://play-ludo-online.herokuapp.com/
 
 feel free to suggest edits
