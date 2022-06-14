@@ -1,1 +1,312 @@
-var _0x3061d2 = _0x5945; (function (_0x5862db, _0x45b33e) { var _0x32a71c = _0x5945, _0x497951 = _0x5862db(); while (!![]) { try { var _0x5a4e82 = parseInt(_0x32a71c(0xf9)) / 0x1 + parseInt(_0x32a71c(0x112)) / 0x2 * (-parseInt(_0x32a71c(0x115)) / 0x3) + parseInt(_0x32a71c(0x114)) / 0x4 + -parseInt(_0x32a71c(0xff)) / 0x5 * (parseInt(_0x32a71c(0x10b)) / 0x6) + -parseInt(_0x32a71c(0x124)) / 0x7 * (parseInt(_0x32a71c(0xfc)) / 0x8) + -parseInt(_0x32a71c(0x11d)) / 0x9 + parseInt(_0x32a71c(0xfa)) / 0xa; if (_0x5a4e82 === _0x45b33e) break; else _0x497951['push'](_0x497951['shift']()); } catch (_0x552fa9) { _0x497951['push'](_0x497951['shift']()); } } }(_0x4d55, 0x7cea2)); function _0x5945(_0x26ca18, _0x63f160) { var _0x4d556e = _0x4d55(); return _0x5945 = function (_0x5945b4, _0x5653e6) { _0x5945b4 = _0x5945b4 - 0xf9; var _0x132f8e = _0x4d556e[_0x5945b4]; return _0x132f8e; }, _0x5945(_0x26ca18, _0x63f160); } function _0x4d55() { var _0x372204 = ['yellow', '909694QeismX', '16124630vZOclk', '#movered1', '464yuZIyd', 'blue', '.red-home', '20YKfgYL', '#movered4', 'win', '<div\x20class=\x22player\x20bg-blue\x20moveblue1\x22\x20id=\x22blue-player-1\x22></div>', 'current_position', 'red', '<div\x20class=\x22player\x20bg-blue\x20moveblue2\x22\x20id=\x22blue-player-2\x22></div>', '#moveblue2', '#moveyellow3', '#movered3', '.blue-home', '.green-home', '1093380cjhsjE', '#movegreen1', '<div\x20class=\x22player\x20bg-yellow\x20moveyellow2\x22\x20id=\x22yellow-player-2\x22></div>', '.yellow-home', '#moveyellow1', '#moveyellow2', '<div\x20class=\x22player\x20bg-green\x20movegreen1\x22\x20id=\x22green-player-1\x22></div>', '4uizIXz', '#movegreen3', '1428596iKXPqq', '1245042VvPObh', '#moveblue1', '#movered2', 'previous_step', 'home', '#moveblue3', 'status', 'green', '3185370aENxON', '#movegreen2', '<div\x20class=\x22player\x20bg-yellow\x20moveyellow4\x22\x20id=\x22yellow-player-4\x22></div>', '<div\x20class=\x22player\x20bg-red\x20movered4\x22\x20id=\x22red-player-4\x22></div>', '<div\x20class=\x22player\x20bg-green\x20movegreen4\x22\x20id=\x22green-player-4\x22></div>', '<div\x20class=\x22player\x20bg-red\x20movered1\x22\x20id=\x22red-player-1\x22></div>', '<div\x20class=\x22player\x20bg-green\x20movegreen3\x22\x20id=\x22green-player-3\x22></div>', '54887GtxQDy']; _0x4d55 = function () { return _0x372204; }; return _0x4d55(); } var watchsec = 0x3e8, red_player_1 = { 'color': _0x3061d2(0x104), 'player': _0x3061d2(0x122), 'path': [0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, _0x3061d2(0x101)], 'current_position': 0x0, 'status': _0x3061d2(0x119), 'current_step': null, 'resetplayer': function () { var _0x5af1b3 = _0x3061d2; this['current_position'] = 0x0, this[_0x5af1b3(0x11b)] = _0x5af1b3(0x119), this[_0x5af1b3(0x118)] = null; }, 'previous_step': null, 'home': _0x3061d2(0xfe), 'controller': _0x3061d2(0xfb) }, red_player_2 = { 'color': _0x3061d2(0x104), 'player': '<div\x20class=\x22player\x20bg-red\x20movered2\x22\x20id=\x22red-player-2\x22></div>', 'path': [0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, _0x3061d2(0x101)], 'current_position': 0x0, 'status': 'home', 'current_step': null, 'resetplayer': function () { var _0x1a67f9 = _0x3061d2; this[_0x1a67f9(0x103)] = 0x0, this[_0x1a67f9(0x11b)] = _0x1a67f9(0x119), this[_0x1a67f9(0x118)] = null; }, 'previous_step': null, 'home': _0x3061d2(0xfe), 'controller': _0x3061d2(0x117) }, red_player_3 = { 'color': _0x3061d2(0x104), 'player': '<div\x20class=\x22player\x20bg-red\x20movered3\x22\x20id=\x22red-player-3\x22></div>', 'path': [0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, _0x3061d2(0x101)], 'current_position': 0x0, 'status': 'home', 'current_step': null, 'resetplayer': function () { var _0x5e90dc = _0x3061d2; this[_0x5e90dc(0x103)] = 0x0, this[_0x5e90dc(0x11b)] = _0x5e90dc(0x119), this['previous_step'] = null; }, 'previous_step': null, 'home': '.red-home', 'controller': _0x3061d2(0x108) }, red_player_4 = { 'color': 'red', 'player': _0x3061d2(0x120), 'path': [0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x1f, 0x20, 0x21, 0x22, 0x23, _0x3061d2(0x101)], 'current_position': 0x0, 'status': _0x3061d2(0x119), 'current_step': null, 'resetplayer': function () { var _0x3de7a7 = _0x3061d2; this['current_position'] = 0x0, this[_0x3de7a7(0x11b)] = 'home', this[_0x3de7a7(0x118)] = null; }, 'previous_step': null, 'home': _0x3061d2(0xfe), 'controller': _0x3061d2(0x100) }, green_player_1 = { 'color': _0x3061d2(0x11c), 'player': _0x3061d2(0x111), 'path': [0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x4, 0x7, 0xa, 0xd, 0x10, 'win'], 'current_position': 0x0, 'status': 'home', 'current_step': null, 'resetplayer': function () { var _0x74c0a8 = _0x3061d2; this[_0x74c0a8(0x103)] = 0x0, this['status'] = _0x74c0a8(0x119), this['previous_step'] = null; }, 'previous_step': null, 'home': _0x3061d2(0x10a), 'controller': _0x3061d2(0x10c) }, green_player_2 = { 'color': 'green', 'player': '<div\x20class=\x22player\x20bg-green\x20movegreen2\x22\x20id=\x22green-player-2\x22></div>', 'path': [0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x4, 0x7, 0xa, 0xd, 0x10, _0x3061d2(0x101)], 'current_position': 0x0, 'status': 'home', 'current_step': null, 'resetplayer': function () { var _0x40d050 = _0x3061d2; this['current_position'] = 0x0, this['status'] = _0x40d050(0x119), this['previous_step'] = null; }, 'previous_step': null, 'home': _0x3061d2(0x10a), 'controller': _0x3061d2(0x11e) }, green_player_3 = { 'color': 'green', 'player': _0x3061d2(0x123), 'path': [0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x4, 0x7, 0xa, 0xd, 0x10, _0x3061d2(0x101)], 'current_position': 0x0, 'status': 'home', 'current_step': null, 'resetplayer': function () { var _0x2a85a1 = _0x3061d2; this[_0x2a85a1(0x103)] = 0x0, this[_0x2a85a1(0x11b)] = _0x2a85a1(0x119), this['previous_step'] = null; }, 'previous_step': null, 'home': _0x3061d2(0x10a), 'controller': _0x3061d2(0x113) }, green_player_4 = { 'color': _0x3061d2(0x11c), 'player': _0x3061d2(0x121), 'path': [0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x4, 0x7, 0xa, 0xd, 0x10, 'win'], 'current_position': 0x0, 'status': _0x3061d2(0x119), 'current_step': null, 'resetplayer': function () { var _0x430daf = _0x3061d2; this[_0x430daf(0x103)] = 0x0, this[_0x430daf(0x11b)] = 'home', this['previous_step'] = null; }, 'previous_step': null, 'home': _0x3061d2(0x10a), 'controller': '#movegreen4' }, blue_player_1 = { 'color': _0x3061d2(0xfd), 'player': _0x3061d2(0x102), 'path': [0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x43, 0x40, 0x3d, 0x3a, 0x37, 'win'], 'current_position': 0x0, 'status': _0x3061d2(0x119), 'current_step': null, 'resetplayer': function () { var _0x27a663 = _0x3061d2; this['current_position'] = 0x0, this[_0x27a663(0x11b)] = 'home', this[_0x27a663(0x118)] = null; }, 'previous_step': null, 'home': _0x3061d2(0x109), 'controller': _0x3061d2(0x116) }, blue_player_2 = { 'color': 'blue', 'player': _0x3061d2(0x105), 'path': [0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x43, 0x40, 0x3d, 0x3a, 0x37, _0x3061d2(0x101)], 'current_position': 0x0, 'status': 'home', 'current_step': null, 'resetplayer': function () { var _0x3f2a1f = _0x3061d2; this[_0x3f2a1f(0x103)] = 0x0, this[_0x3f2a1f(0x11b)] = 'home', this['previous_step'] = null; }, 'previous_step': null, 'home': _0x3061d2(0x109), 'controller': _0x3061d2(0x106) }, blue_player_3 = { 'color': _0x3061d2(0xfd), 'player': '<div\x20class=\x22player\x20bg-blue\x20moveblue3\x22\x20id=\x22blue-player-3\x22></div>', 'path': [0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x43, 0x40, 0x3d, 0x3a, 0x37, 'win'], 'current_position': 0x0, 'status': 'home', 'current_step': null, 'resetplayer': function () { var _0x1c83d7 = _0x3061d2; this[_0x1c83d7(0x103)] = 0x0, this['status'] = 'home', this['previous_step'] = null; }, 'previous_step': null, 'home': _0x3061d2(0x109), 'controller': _0x3061d2(0x11a) }, blue_player_4 = { 'color': _0x3061d2(0xfd), 'player': '<div\x20class=\x22player\x20bg-blue\x20moveblue4\x22\x20id=\x22blue-player-4\x22></div>', 'path': [0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x35, 0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x43, 0x40, 0x3d, 0x3a, 0x37, _0x3061d2(0x101)], 'current_position': 0x0, 'status': _0x3061d2(0x119), 'current_step': null, 'resetplayer': function () { var _0x57d49d = _0x3061d2; this['current_position'] = 0x0, this['status'] = 'home', this[_0x57d49d(0x118)] = null; }, 'previous_step': null, 'home': '.blue-home', 'controller': '#moveblue4' }, yellow_player_1 = { 'color': 'yellow', 'player': '<div\x20class=\x22player\x20bg-yellow\x20moveyellow1\x22\x20id=\x22yellow-player-1\x22></div>', 'path': [0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x28, 0x27, 0x26, 0x25, 0x24, _0x3061d2(0x101)], 'current_position': 0x0, 'status': _0x3061d2(0x119), 'current_step': null, 'resetplayer': function () { var _0x2dd5f3 = _0x3061d2; this[_0x2dd5f3(0x103)] = 0x0, this[_0x2dd5f3(0x11b)] = 'home', this[_0x2dd5f3(0x118)] = null; }, 'previous_step': null, 'home': _0x3061d2(0x10e), 'controller': _0x3061d2(0x10f) }, yellow_player_2 = { 'color': _0x3061d2(0x125), 'player': _0x3061d2(0x10d), 'path': [0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x28, 0x27, 0x26, 0x25, 0x24, _0x3061d2(0x101)], 'current_position': 0x0, 'status': _0x3061d2(0x119), 'current_step': null, 'resetplayer': function () { var _0x15d44a = _0x3061d2; this['current_position'] = 0x0, this['status'] = _0x15d44a(0x119), this['previous_step'] = null; }, 'previous_step': null, 'home': '.yellow-home', 'controller': _0x3061d2(0x110) }, yellow_player_3 = { 'color': 'yellow', 'player': '<div\x20class=\x22player\x20bg-yellow\x20moveyellow3\x22\x20id=\x22yellow-player-3\x22></div>', 'path': [0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x28, 0x27, 0x26, 0x25, 0x24, _0x3061d2(0x101)], 'current_position': 0x0, 'status': 'home', 'current_step': null, 'resetplayer': function () { var _0x4c114e = _0x3061d2; this[_0x4c114e(0x103)] = 0x0, this['status'] = _0x4c114e(0x119), this['previous_step'] = null; }, 'previous_step': null, 'home': _0x3061d2(0x10e), 'controller': _0x3061d2(0x107) }, yellow_player_4 = { 'color': _0x3061d2(0x125), 'player': _0x3061d2(0x11f), 'path': [0x34, 0x33, 0x32, 0x31, 0x30, 0x38, 0x3b, 0x3e, 0x41, 0x44, 0x47, 0x46, 0x45, 0x42, 0x3f, 0x3c, 0x39, 0x36, 0x2f, 0x2e, 0x2d, 0x2c, 0x2b, 0x2a, 0x1e, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0xf, 0xc, 0x9, 0x6, 0x3, 0x0, 0x1, 0x2, 0x5, 0x8, 0xb, 0xe, 0x11, 0x18, 0x19, 0x1a, 0x1b, 0x1c, 0x1d, 0x29, 0x28, 0x27, 0x26, 0x25, 0x24, _0x3061d2(0x101)], 'current_position': 0x0, 'status': _0x3061d2(0x119), 'current_step': null, 'resetplayer': function () { var _0x3d616c = _0x3061d2; this[_0x3d616c(0x103)] = 0x0, this[_0x3d616c(0x11b)] = 'home', this[_0x3d616c(0x118)] = null; }, 'previous_step': null, 'home': _0x3061d2(0x10e), 'controller': '#moveyellow4' }, player_list = { 'red-player-1': red_player_1, 'red-player-2': red_player_2, 'red-player-3': red_player_3, 'red-player-4': red_player_4, 'green-player-1': green_player_1, 'green-player-2': green_player_2, 'green-player-3': green_player_3, 'green-player-4': green_player_4, 'yellow-player-1': yellow_player_1, 'yellow-player-2': yellow_player_2, 'yellow-player-3': yellow_player_3, 'yellow-player-4': yellow_player_4, 'blue-player-1': blue_player_1, 'blue-player-2': blue_player_2, 'blue-player-3': blue_player_3, 'blue-player-4': blue_player_4 };
+var watchsec = 1000;
+
+var red_player_1 = {
+    color: "red",
+    player: `<div class="player bg-red movered1" id="red-player-1"></div>`,
+    path: [19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 31, 32, 33, 34, 35, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".red-home",
+
+
+    controller: "#movered1",
+}
+
+var red_player_2 = {
+    color: "red",
+
+    player: `<div class="player bg-red movered2" id="red-player-2"></div>`,
+
+    path: [19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 31, 32, 33, 34, 35, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".red-home",
+    controller: "#movered2",
+}
+
+var red_player_3 = {
+    color: "red",
+
+    player: `<div class="player bg-red movered3" id="red-player-3"></div>`,
+    path: [19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 31, 32, 33, 34, 35, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".red-home",
+    controller: "#movered3",
+}
+
+var red_player_4 = {
+    color: "red",
+
+    player: `<div class="player bg-red movered4" id="red-player-4"></div>`,
+    path: [19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 31, 32, 33, 34, 35, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".red-home",
+    controller: "#movered4",
+}
+
+
+var green_player_1 = {
+    color: "green",
+
+    player: `<div class="player bg-green movegreen1" id="green-player-1"></div>`,
+    path: [5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 4, 7, 10, 13, 16, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".green-home",
+    controller: "#movegreen1",
+}
+var green_player_2 = {
+    color: "green",
+
+    player: `<div class="player bg-green movegreen2" id="green-player-2"></div>`,
+    path: [5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 4, 7, 10, 13, 16, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".green-home",
+    controller: "#movegreen2",
+}
+
+var green_player_3 = {
+    color: "green",
+
+    player: `<div class="player bg-green movegreen3" id="green-player-3"></div>`,
+    path: [5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 4, 7, 10, 13, 16, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".green-home",
+    controller: "#movegreen3",
+}
+
+var green_player_4 = {
+    color: "green",
+
+    player: `<div class="player bg-green movegreen4" id="green-player-4"></div>`,
+    path: [5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 4, 7, 10, 13, 16, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".green-home",
+    controller: "#movegreen4",
+}
+
+
+var blue_player_1 = {
+    color: "blue",
+
+    player: `<div class="player bg-blue moveblue1" id="blue-player-1"></div>`,
+    path: [66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 67, 64, 61, 58, 55, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".blue-home",
+    controller: "#moveblue1",
+}
+var blue_player_2 = {
+    color: "blue",
+
+    player: `<div class="player bg-blue moveblue2" id="blue-player-2"></div>`,
+    path: [66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 67, 64, 61, 58, 55, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".blue-home",
+    controller: "#moveblue2",
+}
+
+var blue_player_3 = {
+    color: "blue",
+
+    player: `<div class="player bg-blue moveblue3" id="blue-player-3"></div>`,
+    path: [66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 67, 64, 61, 58, 55, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".blue-home",
+    controller: "#moveblue3",
+}
+
+var blue_player_4 = {
+    color: "blue",
+
+    player: `<div class="player bg-blue moveblue4" id="blue-player-4"></div>`,
+    path: [66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 53, 52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 67, 64, 61, 58, 55, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".blue-home",
+    controller: "#moveblue4",
+}
+
+var yellow_player_1 = {
+    color: "yellow",
+
+    player: `<div class="player bg-yellow moveyellow1" id="yellow-player-1"></div>`,
+    path: [52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 40, 39, 38, 37, 36, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".yellow-home",
+    controller: "#moveyellow1",
+}
+var yellow_player_2 = {
+    color: "yellow",
+
+    player: `<div class="player bg-yellow moveyellow2" id="yellow-player-2"></div>`,
+    path: [52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 40, 39, 38, 37, 36, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".yellow-home",
+    controller: "#moveyellow2",
+}
+var yellow_player_3 = {
+    color: "yellow",
+
+    player: `<div class="player bg-yellow moveyellow3" id="yellow-player-3"></div>`,
+    path: [52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 40, 39, 38, 37, 36, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".yellow-home",
+    controller: "#moveyellow3",
+}
+
+
+
+var yellow_player_4 = {
+    color: "yellow",
+
+    player: `<div class="player bg-yellow moveyellow4" id="yellow-player-4"></div>`,
+    path: [52, 51, 50, 49, 48, 56, 59, 62, 65, 68, 71, 70, 69, 66, 63, 60, 57, 54, 47, 46, 45, 44, 43, 42, 30, 18, 19, 20, 21, 22, 23, 15, 12, 9, 6, 3, 0, 1, 2, 5, 8, 11, 14, 17, 24, 25, 26, 27, 28, 29, 41, 40, 39, 38, 37, 36, 'win'],
+    current_position: 0,
+    status: 'home',
+    current_step: null,
+    resetplayer: function() {
+        this.current_position = 0;
+        this.status = "home";
+        this.previous_step = null;
+    },
+    previous_step: null,
+    home: ".yellow-home",
+    controller: "#moveyellow4",
+}
+
+
+var player_list = {
+    "red-player-1": red_player_1,
+    "red-player-2": red_player_2,
+    "red-player-3": red_player_3,
+    "red-player-4": red_player_4,
+    "green-player-1": green_player_1,
+    "green-player-2": green_player_2,
+    "green-player-3": green_player_3,
+    "green-player-4": green_player_4,
+    "yellow-player-1": yellow_player_1,
+    "yellow-player-2": yellow_player_2,
+    "yellow-player-3": yellow_player_3,
+    "yellow-player-4": yellow_player_4,
+    "blue-player-1": blue_player_1,
+    "blue-player-2": blue_player_2,
+    "blue-player-3": blue_player_3,
+    "blue-player-4": blue_player_4,
+
+}

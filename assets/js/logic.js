@@ -1,1 +1,979 @@
-var _0x5e8386 = _0x3748; (function (_0x1ae9bb, _0x1f1792) { var _0x43804c = _0x3748, _0x57c05d = _0x1ae9bb(); while (!![]) { try { var _0x445d33 = parseInt(_0x43804c(0xfd)) / 0x1 * (-parseInt(_0x43804c(0x15f)) / 0x2) + -parseInt(_0x43804c(0x10f)) / 0x3 * (-parseInt(_0x43804c(0xfb)) / 0x4) + parseInt(_0x43804c(0x14e)) / 0x5 + parseInt(_0x43804c(0x108)) / 0x6 * (parseInt(_0x43804c(0x167)) / 0x7) + parseInt(_0x43804c(0x13f)) / 0x8 * (-parseInt(_0x43804c(0x10a)) / 0x9) + -parseInt(_0x43804c(0xec)) / 0xa * (-parseInt(_0x43804c(0xf5)) / 0xb) + parseInt(_0x43804c(0x142)) / 0xc; if (_0x445d33 === _0x1f1792) break; else _0x57c05d['push'](_0x57c05d['shift']()); } catch (_0x497365) { _0x57c05d['push'](_0x57c05d['shift']()); } } }(_0x4c1b, 0x8a4e9)); var steps = document['getElementsByClassName']('step'), init_r = ![]; $(document)[_0x5e8386(0x107)](_0x5c3ba7 => { var _0x7b1c23 = _0x5e8386; console[_0x7b1c23(0x16c)](_0x5c3ba7[_0x7b1c23(0x133)]), (_0x5c3ba7[_0x7b1c23(0x133)] == 0x20 || _0x5c3ba7[_0x7b1c23(0x133)] == 0xd) && $(_0x7b1c23(0xe6))[_0x7b1c23(0x12e)]('click'), (_0x5c3ba7[_0x7b1c23(0x133)] == 0x23 || _0x5c3ba7[_0x7b1c23(0x133)] == 0x31) && $(current_turn[_0x7b1c23(0x16f)][0x0]['controller'])[_0x7b1c23(0x12e)](_0x7b1c23(0x126)), (_0x5c3ba7['keyCode'] == 0x28 || _0x5c3ba7[_0x7b1c23(0x133)] == 0x32) && $(current_turn[_0x7b1c23(0x16f)][0x1][_0x7b1c23(0x105)])[_0x7b1c23(0x12e)]('click'), (_0x5c3ba7[_0x7b1c23(0x133)] == 0x22 || _0x5c3ba7['keyCode'] == 0x33) && $(current_turn[_0x7b1c23(0x16f)][0x2][_0x7b1c23(0x105)])[_0x7b1c23(0x12e)](_0x7b1c23(0x126)), (_0x5c3ba7[_0x7b1c23(0x133)] == 0x25 || _0x5c3ba7['keyCode'] == 0x34) && $(current_turn[_0x7b1c23(0x16f)][0x3]['controller'])[_0x7b1c23(0x12e)](_0x7b1c23(0x126)); }); var step_sound = new Audio(_0x5e8386(0x113)), dead_sound = new Audio(_0x5e8386(0x115)), inout_sound = new Audio(_0x5e8386(0xee)), dice_sound = new Audio('assets/audio/dice.mp3'), winner_sound = new Audio(_0x5e8386(0x148)), safe_stops = [0x13, 0x6, 0x5, 0x1b, 0x34, 0x41, 0x42, 0x2c], hold_time = 0x15e, move_time = 0x12c, names = { 'red_player_name': null, 'green_player_name': null, 'blue_player_name': null, 'yellow_player_name': null }, bot = { 'red': ![], 'blue': ![], 'green': ![], 'yellow': ![] }; $(_0x5e8386(0xe7))[_0x5e8386(0x126)](() => { var _0x25e499 = _0x5e8386; $(_0x25e499(0xe7))[_0x25e499(0x16e)]('botoff'), $(_0x25e499(0xe7))[_0x25e499(0x16e)](_0x25e499(0x169)), bot['red'] = !bot[_0x25e499(0xed)], $(_0x25e499(0x149))[_0x25e499(0x116)](_0x25e499(0x121), bot[_0x25e499(0xed)]), bot['red'] ? $(_0x25e499(0x149))['val'](_0x25e499(0xe5)) : $(_0x25e499(0x149))[_0x25e499(0x119)](''); }), $(_0x5e8386(0x11e))[_0x5e8386(0x126)](() => { var _0x4d62c4 = _0x5e8386; $(_0x4d62c4(0x11e))[_0x4d62c4(0x16e)](_0x4d62c4(0x110)), $(_0x4d62c4(0x11e))['toggleClass']('boton'), bot[_0x4d62c4(0x10b)] = !bot[_0x4d62c4(0x10b)], $('#green_player_name\x20.cun')['attr'](_0x4d62c4(0x121), bot[_0x4d62c4(0x10b)]), bot['green'] ? $(_0x4d62c4(0x114))[_0x4d62c4(0x119)]('Botgreen') : $(_0x4d62c4(0x114))[_0x4d62c4(0x119)](''); }), $(_0x5e8386(0x11a))['click'](() => { var _0x41a1d0 = _0x5e8386; $(_0x41a1d0(0x11a))[_0x41a1d0(0x16e)]('botoff'), $(_0x41a1d0(0x11a))['toggleClass'](_0x41a1d0(0x169)), bot['blue'] = !bot[_0x41a1d0(0x124)], $('#blue_player_name\x20.cun')[_0x41a1d0(0x116)](_0x41a1d0(0x121), bot[_0x41a1d0(0x124)]), bot[_0x41a1d0(0x124)] ? $(_0x41a1d0(0x135))['val'](_0x41a1d0(0xf7)) : $(_0x41a1d0(0x135))[_0x41a1d0(0x119)](''); }), $(_0x5e8386(0x16a))[_0x5e8386(0x126)](() => { var _0x1cc446 = _0x5e8386; $('#yellow_player_name\x20.bot')['toggleClass'](_0x1cc446(0x110)), $(_0x1cc446(0x16a))[_0x1cc446(0x16e)](_0x1cc446(0x169)), bot[_0x1cc446(0xe4)] = !bot[_0x1cc446(0xe4)], $(_0x1cc446(0x15c))['attr'](_0x1cc446(0x121), bot[_0x1cc446(0xe4)]), bot[_0x1cc446(0xe4)] ? $(_0x1cc446(0x15c))[_0x1cc446(0x119)]('Botyellow') : $('#yellow_player_name\x20.cun')['val'](''); }), $(_0x5e8386(0x112))[_0x5e8386(0x126)](() => { var _0x484e58 = _0x5e8386; if (init_r) return 0x0; names['red_player_name'] = $('#red_player_name\x20.cun')[_0x484e58(0x119)](), names['green_player_name'] = $(_0x484e58(0x114))[_0x484e58(0x119)](), names[_0x484e58(0x140)] = $(_0x484e58(0x15c))[_0x484e58(0x119)](), names[_0x484e58(0x102)] = $('#blue_player_name\x20.cun')[_0x484e58(0x119)](); var _0x2e1867 = 0x0, _0x19cbdb = 0x0; if (checku('red')) _0x2e1867++; if (checku(_0x484e58(0x10b))) _0x2e1867++; if (checku(_0x484e58(0xe4))) _0x2e1867++; if (checku(_0x484e58(0x124))) _0x2e1867++; if (bot['red']) _0x19cbdb++; if (bot[_0x484e58(0x10b)]) _0x19cbdb++; if (bot[_0x484e58(0xe4)]) _0x19cbdb++; if (bot[_0x484e58(0x124)]) _0x19cbdb++; _0x2e1867 > 0x1 && _0x19cbdb < _0x2e1867 ? (init(), $(_0x484e58(0x101))['text'](names[_0x484e58(0x122)]), $(_0x484e58(0x15d))[_0x484e58(0x145)](names[_0x484e58(0x14d)]), $('.yc_name')[_0x484e58(0x145)](names[_0x484e58(0x140)]), $(_0x484e58(0xef))['text'](names['blue_player_name']), start_autorun(), $(_0x484e58(0x143))[_0x484e58(0x168)]()) : console['log'](_0x484e58(0x164)); }); function _0x3748(_0x2225e1, _0x4bcfc7) { var _0x4c1b0a = _0x4c1b(); return _0x3748 = function (_0x374850, _0x2b99b7) { _0x374850 = _0x374850 - 0xe1; var _0x4911aa = _0x4c1b0a[_0x374850]; return _0x4911aa; }, _0x3748(_0x2225e1, _0x4bcfc7); } function checku(_0x5352c5) { var _0x2ef149 = _0x5e8386, _0xb664d6 = ![]; return bot[_0x5352c5] && (_0xb664d6 = !![]), !bot[_0x5352c5] && names[_0x5352c5 + _0x2ef149(0x12d)] != null && names[_0x5352c5 + _0x2ef149(0x12d)] != '' && (_0xb664d6 = !![]), _0xb664d6; } var rank_count = 0x0, six_count = 0x0, to_, turn_oder_lobby = [{ 'group': _0x5e8386(0xf1), 'rank': 0x0, 'players': [red_player_1, red_player_2, red_player_3, red_player_4] }, { 'group': _0x5e8386(0x160), 'rank': 0x0, 'players': [green_player_1, green_player_2, green_player_3, green_player_4] }, { 'group': _0x5e8386(0x11b), 'rank': 0x0, 'players': [yellow_player_1, yellow_player_2, yellow_player_3, yellow_player_4] }, { 'group': 'BLUE', 'rank': 0x0, 'players': [blue_player_1, blue_player_2, blue_player_3, blue_player_4] }], turn_oder = [], current_turn_index = 0x0, current_turn = turn_oder[current_turn_index], dice_value = 0x0; function init() { var _0x94b497 = _0x5e8386; init_r = !![], checku(_0x94b497(0xed)) && ($(_0x94b497(0x13c))[_0x94b497(0x10d)](red_player_1[_0x94b497(0x156)] + red_player_2['player'] + red_player_3[_0x94b497(0x156)] + red_player_4['player']), turn_oder[_0x94b497(0x141)](turn_oder_lobby[0x0])), checku(_0x94b497(0x10b)) && ($('.green-home\x20.white-box\x20.player-room')['append'](green_player_1['player'] + green_player_2[_0x94b497(0x156)] + green_player_3[_0x94b497(0x156)] + green_player_4[_0x94b497(0x156)]), turn_oder['push'](turn_oder_lobby[0x1])), checku(_0x94b497(0xe4)) && ($(_0x94b497(0x12f))[_0x94b497(0x10d)](yellow_player_1['player'] + yellow_player_2[_0x94b497(0x156)] + yellow_player_3[_0x94b497(0x156)] + yellow_player_4[_0x94b497(0x156)]), turn_oder['push'](turn_oder_lobby[0x2])), checku(_0x94b497(0x124)) && ($('.blue-home\x20.white-box\x20.player-room')[_0x94b497(0x10d)](blue_player_1[_0x94b497(0x156)] + blue_player_2[_0x94b497(0x156)] + blue_player_3[_0x94b497(0x156)] + blue_player_4[_0x94b497(0x156)]), turn_oder[_0x94b497(0x141)](turn_oder_lobby[0x3])), updateTurn(current_turn_index); } const sleep = _0x2bc60e => { return new Promise(_0x475bc5 => setTimeout(_0x475bc5, _0x2bc60e)); }; $(_0x5e8386(0xe6))[_0x5e8386(0x126)](function () { var _0x585ffa = _0x5e8386; stoptime && startTimer(); if (dice_value != 0x0) return ![]; if (rank_count > turn_oder['length'] - 0x2) return deactivateDice(), ![]; dice_value = Math[_0x585ffa(0x11d)]() * (0x7 - 0x1) + 0x1, dice_value = Math[_0x585ffa(0xfe)](dice_value), deactivateDice(); dice_value == 0x6 ? six_count++ : six_count = 0x0; dice_sound['play'](); if (getActivePlayers(current_turn[_0x585ffa(0x16f)][0x0][_0x585ffa(0x131)]) == 0x0 && dice_value != 0x6) console[_0x585ffa(0x16c)](current_turn[_0x585ffa(0x154)] + _0x585ffa(0x12c)), hold(hold_time)[_0x585ffa(0x14b)](() => { updateTurn(++current_turn_index), activateDice(); }); else { if (!getHomePlayers(current_turn['players'][0x0][_0x585ffa(0x131)]) && getActivePlayers(current_turn[_0x585ffa(0x16f)][0x0][_0x585ffa(0x131)]) == 0x0 && dice_value == 0x6) console['log'](current_turn['group'] + '\x20:\x20you\x20can\x27t\x20use\x20this\x20dice\x20value,\x20so\x20shifting\x20turn\x20to\x20next\x20player'), hold(hold_time)[_0x585ffa(0x14b)](() => { updateTurn(++current_turn_index), activateDice(); }); else { if (getActivePlayers(current_turn['players'][0x0][_0x585ffa(0x131)]) == 0x1 && dice_value < 0x6) console[_0x585ffa(0x16c)](current_turn[_0x585ffa(0x154)] + _0x585ffa(0x159)), hold(hold_time)[_0x585ffa(0x14b)](() => { var _0x22c857 = _0x585ffa; for (i = 0x0; i < 0x4; i++) { current_turn[_0x22c857(0x16f)][i][_0x22c857(0x12a)] == _0x22c857(0x111) && $(current_turn['players'][i][_0x22c857(0x105)] + '')[_0x22c857(0x12e)](_0x22c857(0x126)); } }); else { if (getActivePlayers(current_turn['players'][0x0]['home']) == 0x1 && getHomePlayers(current_turn[_0x585ffa(0x16f)][0x0][_0x585ffa(0x131)]) == 0x0 && dice_value == 0x6) console[_0x585ffa(0x16c)](current_turn[_0x585ffa(0x154)] + _0x585ffa(0x159)), hold(hold_time)[_0x585ffa(0x14b)](() => { var _0x2a0031 = _0x585ffa; for (i = 0x0; i < 0x4; i++) { current_turn[_0x2a0031(0x16f)][i][_0x2a0031(0x12a)] == _0x2a0031(0x111) && $(current_turn['players'][i][_0x2a0031(0x105)] + '')[_0x2a0031(0x12e)]('click'); } }); else getHomePlayers(current_turn[_0x585ffa(0x16f)][0x0]['home']) == 0x1 && getActivePlayers(current_turn[_0x585ffa(0x16f)][0x0][_0x585ffa(0x131)]) == 0x0 && dice_value == 0x6 && (console[_0x585ffa(0x16c)](current_turn[_0x585ffa(0x154)] + _0x585ffa(0x117)), hold(hold_time)['then'](() => { var _0x4b1e1f = _0x585ffa; for (i = 0x0; i < 0x4; i++) { current_turn['players'][i][_0x4b1e1f(0x12a)] == 'home' && $(current_turn[_0x4b1e1f(0x16f)][i][_0x4b1e1f(0x105)] + '')['trigger'](_0x4b1e1f(0x126)); } })); } } } }); const hold = async _0x397c18 => { await sleep(_0x397c18); }; function updateTurn(_0x41539a) { var _0x28b4bb = _0x5e8386; if (rank_count > turn_oder['length'] - 0x2) return 0x0; _0x41539a > turn_oder[_0x28b4bb(0x162)] - 0x1 && (_0x41539a = 0x0); if (turn_oder[_0x41539a][_0x28b4bb(0x151)] > 0x0) return ++current_turn_index, updateTurn(++_0x41539a), 0x0; current_turn_index = _0x41539a, current_turn = turn_oder[_0x41539a], $(_0x28b4bb(0x152))[_0x28b4bb(0x145)](current_turn[_0x28b4bb(0x154)]), $(_0x28b4bb(0xe9))['hide'](), $(_0x28b4bb(0x15a))[_0x28b4bb(0x168)](), $('.blue_control')['hide'](), $('.green_control')[_0x28b4bb(0x168)](), $(_0x28b4bb(0x129))[_0x28b4bb(0xe3)](_0x28b4bb(0x150), _0x28b4bb(0xf2)), $(_0x28b4bb(0x144))[_0x28b4bb(0xe3)](_0x28b4bb(0x150), 'scale(1)'), $(_0x28b4bb(0xfa))[_0x28b4bb(0xe3)](_0x28b4bb(0x150), _0x28b4bb(0xf2)), $(_0x28b4bb(0x14a))[_0x28b4bb(0xe3)](_0x28b4bb(0x150), 'scale(1)'); if (current_turn[_0x28b4bb(0x154)] == 'RED') $(_0x28b4bb(0xe9))['show'](); if (current_turn[_0x28b4bb(0x154)] == 'GREEN') $('.green_control')[_0x28b4bb(0x123)](); if (current_turn[_0x28b4bb(0x154)] == _0x28b4bb(0x153)) $(_0x28b4bb(0x11f))[_0x28b4bb(0x123)](); if (current_turn[_0x28b4bb(0x154)] == _0x28b4bb(0x11b)) $(_0x28b4bb(0x15a))[_0x28b4bb(0x123)](); $(current_turn[_0x28b4bb(0x16f)][0x0][_0x28b4bb(0x131)] + _0x28b4bb(0x13d))[_0x28b4bb(0xe3)]('transform', 'scale(1.15)'), six_count = 0x0, bot[current_turn[_0x28b4bb(0x154)]['toLowerCase']()] && start_autorun(); } function getActivePlayers(_0xea094) { var _0x3b80dd = _0x5e8386, _0x4b3c2a = 0x0; if (_0xea094 == '.red-home') { if (red_player_1['status'] == _0x3b80dd(0x111) && red_player_1[_0x3b80dd(0xea)] + dice_value <= red_player_1['path'][_0x3b80dd(0x162)]) _0x4b3c2a++; if (red_player_2['status'] == _0x3b80dd(0x111) && red_player_2[_0x3b80dd(0xea)] + dice_value <= red_player_2['path'][_0x3b80dd(0x162)]) _0x4b3c2a++; if (red_player_3[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && red_player_3[_0x3b80dd(0xea)] + dice_value <= red_player_3[_0x3b80dd(0x125)]['length']) _0x4b3c2a++; if (red_player_4[_0x3b80dd(0x12a)] == 'active' && red_player_4[_0x3b80dd(0xea)] + dice_value <= red_player_4['path'][_0x3b80dd(0x162)]) _0x4b3c2a++; } if (_0xea094 == _0x3b80dd(0x13a)) { if (green_player_1[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && green_player_1[_0x3b80dd(0xea)] + dice_value <= green_player_1[_0x3b80dd(0x125)][_0x3b80dd(0x162)]) _0x4b3c2a++; if (green_player_2[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && green_player_2[_0x3b80dd(0xea)] + dice_value <= green_player_2[_0x3b80dd(0x125)][_0x3b80dd(0x162)]) _0x4b3c2a++; if (green_player_3[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && green_player_3[_0x3b80dd(0xea)] + dice_value <= green_player_3[_0x3b80dd(0x125)]['length']) _0x4b3c2a++; if (green_player_4[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && green_player_4[_0x3b80dd(0xea)] + dice_value <= green_player_4['path'][_0x3b80dd(0x162)]) _0x4b3c2a++; } if (_0xea094 == _0x3b80dd(0x13e)) { if (yellow_player_1[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && yellow_player_1[_0x3b80dd(0xea)] + dice_value <= yellow_player_1[_0x3b80dd(0x125)][_0x3b80dd(0x162)]) _0x4b3c2a++; if (yellow_player_2[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && yellow_player_2['current_position'] + dice_value <= yellow_player_2[_0x3b80dd(0x125)][_0x3b80dd(0x162)]) _0x4b3c2a++; if (yellow_player_3[_0x3b80dd(0x12a)] == 'active' && yellow_player_3[_0x3b80dd(0xea)] + dice_value <= yellow_player_3[_0x3b80dd(0x125)][_0x3b80dd(0x162)]) _0x4b3c2a++; if (yellow_player_4[_0x3b80dd(0x12a)] == 'active' && yellow_player_4[_0x3b80dd(0xea)] + dice_value <= yellow_player_4[_0x3b80dd(0x125)][_0x3b80dd(0x162)]) _0x4b3c2a++; } if (_0xea094 == '.blue-home') { if (blue_player_1[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && blue_player_1[_0x3b80dd(0xea)] + dice_value <= blue_player_1[_0x3b80dd(0x125)]['length']) _0x4b3c2a++; if (blue_player_2[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && blue_player_2['current_position'] + dice_value <= blue_player_2[_0x3b80dd(0x125)][_0x3b80dd(0x162)]) _0x4b3c2a++; if (blue_player_3[_0x3b80dd(0x12a)] == _0x3b80dd(0x111) && blue_player_3[_0x3b80dd(0xea)] + dice_value <= blue_player_3[_0x3b80dd(0x125)]['length']) _0x4b3c2a++; if (blue_player_4['status'] == 'active' && blue_player_4[_0x3b80dd(0xea)] + dice_value <= blue_player_4[_0x3b80dd(0x125)][_0x3b80dd(0x162)]) _0x4b3c2a++; } return _0x4b3c2a; } function getWinPlayers(_0x3df16a) { var _0x861675 = _0x5e8386, _0x5315a4 = 0x0; if (_0x3df16a == _0x861675(0x100)) { if (red_player_1['status'] == 'win') _0x5315a4++; if (red_player_2['status'] == _0x861675(0x155)) _0x5315a4++; if (red_player_3[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; if (red_player_4[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; } if (_0x3df16a == _0x861675(0x13a)) { if (green_player_1[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; if (green_player_2[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; if (green_player_3[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; if (green_player_4[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; } if (_0x3df16a == _0x861675(0x13e)) { if (yellow_player_1['status'] == _0x861675(0x155)) _0x5315a4++; if (yellow_player_2[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; if (yellow_player_3[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; if (yellow_player_4[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; } if (_0x3df16a == '.blue-home') { if (blue_player_1[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; if (blue_player_2[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; if (blue_player_3['status'] == 'win') _0x5315a4++; if (blue_player_4[_0x861675(0x12a)] == _0x861675(0x155)) _0x5315a4++; } return _0x5315a4; } function getHomePlayers(_0x3e8c9c) { var _0x596b11 = _0x5e8386, _0x5132e4 = 0x0; if (_0x3e8c9c == _0x596b11(0x100)) { if (red_player_1[_0x596b11(0x12a)] == 'home') _0x5132e4++; if (red_player_2[_0x596b11(0x12a)] == _0x596b11(0x131)) _0x5132e4++; if (red_player_3[_0x596b11(0x12a)] == _0x596b11(0x131)) _0x5132e4++; if (red_player_4['status'] == _0x596b11(0x131)) _0x5132e4++; } if (_0x3e8c9c == '.green-home') { if (green_player_1[_0x596b11(0x12a)] == _0x596b11(0x131)) _0x5132e4++; if (green_player_2[_0x596b11(0x12a)] == _0x596b11(0x131)) _0x5132e4++; if (green_player_3[_0x596b11(0x12a)] == 'home') _0x5132e4++; if (green_player_4[_0x596b11(0x12a)] == _0x596b11(0x131)) _0x5132e4++; } if (_0x3e8c9c == _0x596b11(0x13e)) { if (yellow_player_1['status'] == _0x596b11(0x131)) _0x5132e4++; if (yellow_player_2['status'] == _0x596b11(0x131)) _0x5132e4++; if (yellow_player_3['status'] == _0x596b11(0x131)) _0x5132e4++; if (yellow_player_4['status'] == _0x596b11(0x131)) _0x5132e4++; } if (_0x3e8c9c == '.blue-home') { if (blue_player_1[_0x596b11(0x12a)] == _0x596b11(0x131)) _0x5132e4++; if (blue_player_2[_0x596b11(0x12a)] == _0x596b11(0x131)) _0x5132e4++; if (blue_player_3[_0x596b11(0x12a)] == _0x596b11(0x131)) _0x5132e4++; if (blue_player_4[_0x596b11(0x12a)] == _0x596b11(0x131)) _0x5132e4++; } return _0x5132e4; } var isPlayerIsMoving = ![]; function movePlayer(_0x4c21df, _0x55d94f, _0x521685) { var _0x5dfc68 = _0x5e8386; if (rank_count > turn_oder[_0x5dfc68(0x162)] - 0x2) return 0x0; if (isPlayerIsMoving) return 0x0; if (_0x55d94f == 0x0) return console['log'](_0x4c21df[_0x5dfc68(0x120)] + _0x5dfc68(0x109)), 0x0; if (_0x55d94f == 0x6 && _0x4c21df[_0x5dfc68(0x12a)] == 'home') { _0x4c21df[_0x5dfc68(0x12a)] = _0x5dfc68(0x111), console['log'](_0x4c21df[_0x5dfc68(0x120)] + _0x5dfc68(0x14c)); var _0x25aedf = $(_0x4c21df[_0x5dfc68(0x131)] + _0x5dfc68(0x137))[_0x5dfc68(0x103)](); $(_0x4c21df[_0x5dfc68(0x131)] + _0x5dfc68(0x137))[_0x5dfc68(0x103)](_0x25aedf['replace'](_0x4c21df[_0x5dfc68(0x156)], '')), _0x55d94f = 0x1; } if (_0x55d94f != 0x0 && _0x4c21df['status'] == _0x5dfc68(0x131)) return console['log'](_0x4c21df[_0x5dfc68(0x120)] + _0x5dfc68(0x127)), 0x0; if (_0x4c21df[_0x5dfc68(0x12a)] != _0x5dfc68(0x111)) return activateDice(), 0x0; if (_0x4c21df[_0x5dfc68(0xea)] + _0x55d94f > _0x4c21df[_0x5dfc68(0x125)][_0x5dfc68(0x162)] && getActivePlayers(_0x4c21df[_0x5dfc68(0x131)]) == 0x1) return hold(hold_time)[_0x5dfc68(0x14b)](() => { activateDice(), updateTurn(++current_turn_index); }), 0x0; if (_0x4c21df[_0x5dfc68(0xea)] + _0x55d94f > _0x4c21df[_0x5dfc68(0x125)]['length']) return 0x0; const _0x3f7451 = []; for (i = 0x0; i < _0x55d94f; i++) { _0x3f7451[_0x5dfc68(0x141)](0x1); } const _0x6fbe9d = async () => { var _0x12d045 = _0x5dfc68; isPlayerIsMoving = !![]; for (const _0x5e8b6f of _0x3f7451) { _0x4c21df[_0x12d045(0x157)] = _0x521685[_0x4c21df['path'][_0x4c21df[_0x12d045(0xea)]]]; if (_0x4c21df[_0x12d045(0x125)][_0x4c21df[_0x12d045(0xea)]] == _0x12d045(0x155)) { winner_sound[_0x12d045(0x165)](), _0x4c21df['status'] = _0x12d045(0x155), _0x4c21df[_0x12d045(0xf4)] = _0x521685[_0x4c21df[_0x12d045(0x125)][_0x4c21df[_0x12d045(0xea)] - 0x1]], _0x4c21df[_0x12d045(0xf4)][_0x12d045(0x12b)] = _0x4c21df[_0x12d045(0xf4)][_0x12d045(0x12b)]['replace'](_0x4c21df[_0x12d045(0x156)], ''); var _0x4aa209 = ''; return _0x4c21df['home'] == _0x12d045(0x100) && (_0x4aa209 = _0x12d045(0x163)), _0x4c21df['home'] == '.green-home' && (_0x4aa209 = '.gwh'), _0x4c21df[_0x12d045(0x131)] == _0x12d045(0x13e) && (_0x4aa209 = _0x12d045(0x138)), _0x4c21df[_0x12d045(0x131)] == _0x12d045(0xf0) && (_0x4aa209 = _0x12d045(0x139)), $(_0x12d045(0xf8) + _0x4aa209)[_0x12d045(0x103)]($(_0x12d045(0xf8) + _0x4aa209)[_0x12d045(0x103)]() + _0x4c21df[_0x12d045(0x156)]), getWinPlayers(_0x4c21df[_0x12d045(0x131)]) > 0x3 && (!current_turn['rank'] > 0x0 && (current_turn[_0x12d045(0x151)] = ++rank_count, console[_0x12d045(0x16c)](_0x4c21df[_0x12d045(0x120)] + _0x12d045(0x11c) + rank_count + _0x12d045(0xeb))), $(_0x4c21df[_0x12d045(0x131)] + _0x12d045(0x13d))[_0x12d045(0xe3)]('background-image', _0x12d045(0x15e) + rank_count + _0x12d045(0x161)), $(_0x4c21df[_0x12d045(0x131)])[_0x12d045(0xe3)](_0x12d045(0xe2), '1')), 0x0; } else _0x4c21df[_0x12d045(0xea)] != 0x0 ? (_0x4c21df[_0x12d045(0xf4)] = _0x521685[_0x4c21df[_0x12d045(0x125)][_0x4c21df[_0x12d045(0xea)] - 0x1]], _0x4c21df[_0x12d045(0xf4)][_0x12d045(0x12b)] = _0x4c21df['previous_step'][_0x12d045(0x12b)][_0x12d045(0x132)](_0x4c21df[_0x12d045(0x156)], ''), _0x4c21df['current_step'][_0x12d045(0x12b)] = _0x4c21df[_0x12d045(0x157)][_0x12d045(0x12b)] + _0x4c21df['player']) : _0x4c21df[_0x12d045(0x157)][_0x12d045(0x12b)] = _0x4c21df[_0x12d045(0x157)][_0x12d045(0x12b)] + _0x4c21df[_0x12d045(0x156)], step_sound[_0x12d045(0x165)](), _0x4c21df['current_position']++; await sleep(move_time); } }; _0x6fbe9d()[_0x5dfc68(0x14b)](() => { var _0x3096d1 = _0x5dfc68, _0x5174f1 = steps[_0x4c21df[_0x3096d1(0x125)][_0x4c21df[_0x3096d1(0xea)] - 0x1]]; if (_0x5174f1[_0x3096d1(0x147)][_0x3096d1(0x162)] > 0x1 && !safe_stops[_0x3096d1(0xfc)](_0x4c21df[_0x3096d1(0x125)][_0x4c21df[_0x3096d1(0xea)] - 0x1])) for (i = 0x0; i < _0x5174f1[_0x3096d1(0x147)]['length']; i++) { var _0x2b4645 = player_list[_0x5174f1['children'][i]['getAttribute']('id')]; if (_0x5174f1['children'][i] != _0x4c21df['player'] && _0x2b4645[_0x3096d1(0x120)] != _0x4c21df[_0x3096d1(0x120)]) return $(_0x2b4645[_0x3096d1(0x131)] + _0x3096d1(0x137))[_0x3096d1(0x10d)](_0x2b4645[_0x3096d1(0x156)]), _0x5174f1['children'][i][_0x3096d1(0x146)](), dead_sound[_0x3096d1(0x165)](), _0x2b4645[_0x3096d1(0xf3)](), isPlayerIsMoving = ![], activateDice(), 0x0; } if (rank_count > turn_oder['length'] - 0x2) { deactivateDice(); for (i = 0x0; i < turn_oder[_0x3096d1(0x162)]; i++) { if (getWinPlayers(turn_oder[i][_0x3096d1(0x16f)][0x0][_0x3096d1(0x131)]) != 0x4) break; } return stopTimer(), 0x0; } if (_0x4c21df['status'] == _0x3096d1(0x155)) { if (current_turn[_0x3096d1(0x151)] > 0x0) return console[_0x3096d1(0x16c)](_0x3096d1(0x158) + _0x4c21df[_0x3096d1(0x120)]), isPlayerIsMoving = ![], activateDice(), updateTurn(++current_turn_index), 0x0; return console[_0x3096d1(0x16c)]('you\x20just\x20winned\x20&\x20getting\x20an\x20extra\x20chance'), isPlayerIsMoving = ![], activateDice(), $(_0x4c21df[_0x3096d1(0x105)])[_0x3096d1(0x116)](_0x3096d1(0x121), !![]), $(_0x4c21df['controller'])['css'](_0x3096d1(0xe2), _0x3096d1(0x15b)), $(_0x4c21df[_0x3096d1(0x105)])[_0x3096d1(0xe3)](_0x3096d1(0xe1), _0x3096d1(0x13b)), 0x0; } dice_value != 0x6 && updateTurn(++current_turn_index), six_count > 0x2 && updateTurn(++current_turn_index), isPlayerIsMoving = ![], activateDice(); }); } function activateDice() { var _0x224eab = _0x5e8386; $(_0x224eab(0xe6))[_0x224eab(0xe3)](_0x224eab(0xe2), '1'), dice_value = 0x0, $(_0x224eab(0xe6))[_0x224eab(0x103)](_0x224eab(0x10e) + dice_value + _0x224eab(0x136)), $(_0x224eab(0xe6))['attr'](_0x224eab(0x121), ![]); } function deactivateDice() { var _0x45cdb1 = _0x5e8386; $('#dice')[_0x45cdb1(0x103)](_0x45cdb1(0x10e) + dice_value + _0x45cdb1(0x136)), $(_0x45cdb1(0xe6))[_0x45cdb1(0xe3)]('opacity', _0x45cdb1(0xe8)), $(_0x45cdb1(0xe6))[_0x45cdb1(0x116)](_0x45cdb1(0x121), !![]); } function _0x4c1b() { var _0x583f1e = ['#yellow_player_name\x20.cun', '.gc_name', 'url(assets/img/crown', '1082QlIeaP', 'GREEN', '.png)', 'length', '.rwh', 'noooo', 'play', '#moveblue3', '126xqZDrQ', 'hide', 'boton', '#yellow_player_name\x20.bot', '#movered1', 'log', '#movered4', 'toggleClass', 'players', 'background-color', 'opacity', 'css', 'yellow', 'Botred', '#dice', '#red_player_name\x20.bot', '0.5', '.red_control', 'current_position', '\x20rank\x20', '10xFLabD', 'red', 'assets/audio/inout.mp3', '.bc_name', '.blue-home', 'RED', 'scale(1)', 'resetplayer', 'previous_step', '11752763rSTWjn', '#moveyellow4', 'Botblue', '.winner-home\x20', 'wait\x20for\x20your\x20turn,\x20please', '.yellow-home\x20.white-box', '4zUPyfA', 'includes', '1429cznOEN', 'floor', 'reload', '.red-home', '.rc_name', 'blue_player_name', 'html', '#movegreen1', 'controller', '#moveyellow1', 'keydown', '128322XzXrgA', '\x20:\x20Dice\x20value\x20is\x200', '9oEbPAT', 'green', '#moveblue4', 'append', '<img\x20src=\x27assets/img/dice', '417981aTrpDl', 'botoff', 'active', '#start_btn', 'assets/audio/step.mp3', '#green_player_name\x20.cun', 'assets/audio/dead.mp3', 'attr', '\x20:\x20you\x20got\x206\x20but\x20,\x20you\x20don\x27t\x20have\x20any\x20active\x20players\x20and\x20only\x201\x20player\x20in\x20home\x20so\x20making\x20it\x20active', '#movered2', 'val', '#blue_player_name\x20.bot', 'YELLOW', '\x20:\x20You\x20just\x20got\x20', 'random', '#green_player_name\x20.bot', '.blue_control', 'color', 'disabled', 'red_player_name', 'show', 'blue', 'path', 'click', '\x20:\x20player\x20is\x20not\x20active', '#moveyellow3', '.red-home\x20.white-box', 'status', 'innerHTML', '\x20:\x20no\x20player\x20is\x20active\x20,\x20shifting\x20turn\x20to\x20next\x20player', '_player_name', 'trigger', '.yellow-home\x20.white-box\x20.player-room', '#movered3', 'home', 'replace', 'keyCode', 'dice\x20value\x20is\x20too\x20big\x20for\x20this\x20player,\x20try\x20another\x20player', '#blue_player_name\x20.cun', '.png\x27\x20class=\x27dice\x27/>', '\x20.white-box\x20.player-room', '.ywh', '.bwh', '.green-home', 'grey', '.red-home\x20.white-box\x20.player-room', '\x20.white-box', '.yellow-home', '4301432uWYwkN', 'yellow_player_name', 'push', '2299392sbwKTd', '.welcome', '.green-home\x20.white-box', 'text', 'remove', 'children', 'assets/audio/winner.mp3', '#red_player_name\x20.cun', '.blue-home\x20.white-box', 'then', '\x20:\x20Player\x20is\x20active\x20now', 'green_player_name', '464655Jkdjyc', '#movegreen3', 'transform', 'rank', '.current_turn', 'BLUE', 'group', 'win', 'player', 'current_step', 'game\x20finished\x20for\x20', '\x20:\x20you\x20only\x20have\x201\x20active\x20player\x20so\x20moving\x20automatically', '.yellow_control', '0.6']; _0x4c1b = function () { return _0x583f1e; }; return _0x4c1b(); } $(_0x5e8386(0x16b))[_0x5e8386(0x126)](() => { var _0x20de3f = _0x5e8386; if (current_turn[_0x20de3f(0x154)] != _0x20de3f(0xf1)) return console[_0x20de3f(0x16c)](_0x20de3f(0xf9)), 0x0; if (red_player_1[_0x20de3f(0xea)] + dice_value > red_player_1[_0x20de3f(0x125)][_0x20de3f(0x162)]) return console[_0x20de3f(0x16c)](_0x20de3f(0x134)), 0x0; movePlayer(red_player_1, dice_value, steps); }), $(_0x5e8386(0x118))[_0x5e8386(0x126)](() => { var _0x567a87 = _0x5e8386; if (current_turn[_0x567a87(0x154)] != _0x567a87(0xf1)) return console[_0x567a87(0x16c)](_0x567a87(0xf9)), 0x0; if (red_player_2[_0x567a87(0xea)] + dice_value > red_player_2[_0x567a87(0x125)][_0x567a87(0x162)]) return console[_0x567a87(0x16c)](_0x567a87(0x134)), 0x0; movePlayer(red_player_2, dice_value, steps); }), $(_0x5e8386(0x130))[_0x5e8386(0x126)](() => { var _0xa76dbb = _0x5e8386; if (current_turn['group'] != _0xa76dbb(0xf1)) return console[_0xa76dbb(0x16c)](_0xa76dbb(0xf9)), 0x0; if (red_player_3[_0xa76dbb(0xea)] + dice_value > red_player_3['path'][_0xa76dbb(0x162)]) return console[_0xa76dbb(0x16c)](_0xa76dbb(0x134)), 0x0; movePlayer(red_player_3, dice_value, steps); }), $(_0x5e8386(0x16d))[_0x5e8386(0x126)](() => { var _0x30d601 = _0x5e8386; if (current_turn[_0x30d601(0x154)] != _0x30d601(0xf1)) return console[_0x30d601(0x16c)]('wait\x20for\x20your\x20turn,\x20please'), 0x0; if (red_player_4['current_position'] + dice_value > red_player_4[_0x30d601(0x125)][_0x30d601(0x162)]) return console['log'](_0x30d601(0x134)), 0x0; movePlayer(red_player_4, dice_value, steps); }), $(_0x5e8386(0x104))['click'](() => { var _0xc653be = _0x5e8386; if (current_turn['group'] != _0xc653be(0x160)) return console[_0xc653be(0x16c)](_0xc653be(0xf9)), 0x0; if (green_player_1['current_position'] + dice_value > green_player_1[_0xc653be(0x125)]['length']) return console[_0xc653be(0x16c)](_0xc653be(0x134)), 0x0; movePlayer(green_player_1, dice_value, steps); }), $('#movegreen2')[_0x5e8386(0x126)](() => { var _0x945f88 = _0x5e8386; if (current_turn[_0x945f88(0x154)] != _0x945f88(0x160)) return console['log'](_0x945f88(0xf9)), 0x0; if (green_player_2[_0x945f88(0xea)] + dice_value > green_player_2[_0x945f88(0x125)][_0x945f88(0x162)]) return console[_0x945f88(0x16c)](_0x945f88(0x134)), 0x0; movePlayer(green_player_2, dice_value, steps); }), $(_0x5e8386(0x14f))[_0x5e8386(0x126)](() => { var _0x3e1b32 = _0x5e8386; if (current_turn[_0x3e1b32(0x154)] != _0x3e1b32(0x160)) return console[_0x3e1b32(0x16c)](_0x3e1b32(0xf9)), 0x0; if (green_player_3[_0x3e1b32(0xea)] + dice_value > green_player_3[_0x3e1b32(0x125)][_0x3e1b32(0x162)]) return console['log'](_0x3e1b32(0x134)), 0x0; movePlayer(green_player_3, dice_value, steps); }), $('#movegreen4')[_0x5e8386(0x126)](() => { var _0x318853 = _0x5e8386; if (current_turn['group'] != _0x318853(0x160)) return console[_0x318853(0x16c)](_0x318853(0xf9)), 0x0; if (green_player_4[_0x318853(0xea)] + dice_value > green_player_4[_0x318853(0x125)][_0x318853(0x162)]) return console[_0x318853(0x16c)](_0x318853(0x134)), 0x0; movePlayer(green_player_4, dice_value, steps); }), $(_0x5e8386(0x106))[_0x5e8386(0x126)](() => { var _0x398b4b = _0x5e8386; if (current_turn[_0x398b4b(0x154)] != _0x398b4b(0x11b)) return console[_0x398b4b(0x16c)](_0x398b4b(0xf9)), 0x0; if (yellow_player_1[_0x398b4b(0xea)] + dice_value > yellow_player_1['path'][_0x398b4b(0x162)]) return console['log'](_0x398b4b(0x134)), 0x0; movePlayer(yellow_player_1, dice_value, steps); }), $('#moveyellow2')[_0x5e8386(0x126)](() => { var _0x482966 = _0x5e8386; if (current_turn[_0x482966(0x154)] != _0x482966(0x11b)) return console[_0x482966(0x16c)]('wait\x20for\x20your\x20turn,\x20please'), 0x0; if (yellow_player_2[_0x482966(0xea)] + dice_value > yellow_player_2[_0x482966(0x125)]['length']) return console[_0x482966(0x16c)](_0x482966(0x134)), 0x0; movePlayer(yellow_player_2, dice_value, steps); }), $(_0x5e8386(0x128))[_0x5e8386(0x126)](() => { var _0x2f46e5 = _0x5e8386; if (current_turn[_0x2f46e5(0x154)] != _0x2f46e5(0x11b)) return console['log'](_0x2f46e5(0xf9)), 0x0; if (yellow_player_3[_0x2f46e5(0xea)] + dice_value > yellow_player_3['path'][_0x2f46e5(0x162)]) return console[_0x2f46e5(0x16c)](_0x2f46e5(0x134)), 0x0; movePlayer(yellow_player_3, dice_value, steps); }), $(_0x5e8386(0xf6))[_0x5e8386(0x126)](() => { var _0xab7619 = _0x5e8386; if (current_turn['group'] != 'YELLOW') return console[_0xab7619(0x16c)]('wait\x20for\x20your\x20turn,\x20please'), 0x0; if (yellow_player_4[_0xab7619(0xea)] + dice_value > yellow_player_4[_0xab7619(0x125)][_0xab7619(0x162)]) return console[_0xab7619(0x16c)](_0xab7619(0x134)), 0x0; movePlayer(yellow_player_4, dice_value, steps); }), $('#moveblue1')['click'](() => { var _0x238ff8 = _0x5e8386; if (current_turn['group'] != _0x238ff8(0x153)) return console[_0x238ff8(0x16c)](_0x238ff8(0xf9)), 0x0; if (blue_player_1[_0x238ff8(0xea)] + dice_value > blue_player_1[_0x238ff8(0x125)]['length']) return console[_0x238ff8(0x16c)](_0x238ff8(0x134)), 0x0; movePlayer(blue_player_1, dice_value, steps); }), $('#moveblue2')['click'](() => { var _0x209ba8 = _0x5e8386; if (current_turn[_0x209ba8(0x154)] != _0x209ba8(0x153)) return console[_0x209ba8(0x16c)](_0x209ba8(0xf9)), 0x0; if (blue_player_2[_0x209ba8(0xea)] + dice_value > blue_player_2[_0x209ba8(0x125)][_0x209ba8(0x162)]) return console[_0x209ba8(0x16c)](_0x209ba8(0x134)), 0x0; movePlayer(blue_player_2, dice_value, steps); }), $(_0x5e8386(0x166))[_0x5e8386(0x126)](() => { var _0x18cc42 = _0x5e8386; if (current_turn[_0x18cc42(0x154)] != _0x18cc42(0x153)) return console[_0x18cc42(0x16c)](_0x18cc42(0xf9)), 0x0; if (blue_player_3['current_position'] + dice_value > blue_player_3['path'][_0x18cc42(0x162)]) return console[_0x18cc42(0x16c)](_0x18cc42(0x134)), 0x0; movePlayer(blue_player_3, dice_value, steps); }), $(_0x5e8386(0x10c))['click'](() => { var _0x1664f7 = _0x5e8386; if (current_turn[_0x1664f7(0x154)] != _0x1664f7(0x153)) return console[_0x1664f7(0x16c)](_0x1664f7(0xf9)), 0x0; if (blue_player_4[_0x1664f7(0xea)] + dice_value > blue_player_4[_0x1664f7(0x125)][_0x1664f7(0x162)]) return console[_0x1664f7(0x16c)](_0x1664f7(0x134)), 0x0; movePlayer(blue_player_4, dice_value, steps); }), $('.restartgame')[_0x5e8386(0x126)](() => { var _0x3a836f = _0x5e8386; location[_0x3a836f(0xff)](); });
+var steps = document.getElementsByClassName("step");
+// for(i=0;i<steps.length;i++){
+//     steps[i].innerText=i;
+// }
+var init_r = false;
+
+$(document).keydown((e) => {
+    console.log(e.keyCode)
+    if (e.keyCode == 32 || e.keyCode == 13) {
+        $("#dice").trigger("click");
+    }
+    if (e.keyCode == 35 || e.keyCode == 49) {
+        $(current_turn.players[0].controller).trigger("click");
+    }
+    if (e.keyCode == 40 || e.keyCode == 50) {
+        $(current_turn.players[1].controller).trigger("click");
+    }
+    if (e.keyCode == 34 || e.keyCode == 51) {
+        $(current_turn.players[2].controller).trigger("click");
+    }
+    if (e.keyCode == 37 || e.keyCode == 52) {
+        $(current_turn.players[3].controller).trigger("click");
+    }
+});
+
+var step_sound = new Audio('assets/audio/step.mp3');
+var dead_sound = new Audio('assets/audio/dead.mp3');
+var inout_sound = new Audio('assets/audio/inout.mp3');
+var dice_sound = new Audio('assets/audio/dice.mp3');
+var winner_sound = new Audio('assets/audio/winner.mp3');
+
+
+var safe_stops = [19, 6, 5, 27, 52, 65, 66, 44];
+var hold_time = 350;
+var move_time = 300;
+
+var names = {
+    red_player_name: null,
+    green_player_name: null,
+    blue_player_name: null,
+    yellow_player_name: null,
+}
+
+
+var bot = {
+    red: false,
+    blue: false,
+    green: false,
+    yellow: false,
+}
+$("#red_player_name .bot").click(() => {
+    $("#red_player_name .bot").toggleClass("botoff");
+    $("#red_player_name .bot").toggleClass("boton");
+    bot.red = !bot.red;
+    $("#red_player_name .cun").attr("disabled", bot.red);
+    if (bot.red) {
+        $("#red_player_name .cun").val("Botred");
+    } else {
+        $("#red_player_name .cun").val("");
+
+    }
+});
+
+$("#green_player_name .bot").click(() => {
+    $("#green_player_name .bot").toggleClass("botoff");
+    $("#green_player_name .bot").toggleClass("boton");
+    bot.green = !bot.green;
+    $("#green_player_name .cun").attr("disabled", bot.green);
+    if (bot.green) {
+        $("#green_player_name .cun").val("Botgreen");
+    } else {
+        $("#green_player_name .cun").val("");
+
+    }
+});
+
+
+$("#blue_player_name .bot").click(() => {
+    $("#blue_player_name .bot").toggleClass("botoff");
+    $("#blue_player_name .bot").toggleClass("boton");
+    bot.blue = !bot.blue;
+    $("#blue_player_name .cun").attr("disabled", bot.blue);
+    if (bot.blue) {
+        $("#blue_player_name .cun").val("Botblue");
+    } else {
+        $("#blue_player_name .cun").val("");
+
+    }
+});
+$("#yellow_player_name .bot").click(() => {
+    $("#yellow_player_name .bot").toggleClass("botoff");
+    $("#yellow_player_name .bot").toggleClass("boton");
+    bot.yellow = !bot.yellow;
+    $("#yellow_player_name .cun").attr("disabled", bot.yellow);
+
+    if (bot.yellow) {
+        $("#yellow_player_name .cun").val("Botyellow");
+    } else {
+        $("#yellow_player_name .cun").val("");
+
+    }
+});
+
+$("#start_btn").click(() => {
+    if (init_r) {
+        return 0;
+    }
+    names.red_player_name = $("#red_player_name .cun").val();
+    names.green_player_name = $("#green_player_name .cun").val();
+    names.yellow_player_name = $("#yellow_player_name .cun").val();
+    names.blue_player_name = $("#blue_player_name .cun").val();
+    var ap = 0;
+    var b = 0;
+    if (checku('red')) ap++;
+    if (checku('green')) ap++;
+    if (checku('yellow')) ap++;
+    if (checku('blue')) ap++;
+
+    if (bot['red']) b++;
+    if (bot['green']) b++;
+    if (bot['yellow']) b++;
+    if (bot['blue']) b++;
+
+    if (ap > 1 && b < ap) {
+        init();
+        $(".rc_name").text(names.red_player_name);
+        $(".gc_name").text(names.green_player_name);
+        $(".yc_name").text(names.yellow_player_name);
+        $(".bc_name").text(names.blue_player_name);
+        start_autorun();
+        $(".welcome").hide();
+
+    } else {
+        console.log("noooo");
+    }
+
+});
+
+function checku(u) {
+    var ret = false;
+    if (bot[u]) {
+        ret = true;
+    }
+    if (!bot[u] && names[u + "_player_name"] != null && names[u + "_player_name"] != "") {
+        ret = true;
+
+    }
+
+    return ret;
+}
+
+
+
+var rank_count = 0;
+var six_count = 0;
+var to_
+var turn_oder_lobby = [
+    { group: 'RED', rank: 0, players: [red_player_1, red_player_2, red_player_3, red_player_4] },
+    { group: 'GREEN', rank: 0, players: [green_player_1, green_player_2, green_player_3, green_player_4] },
+
+    { group: 'YELLOW', rank: 0, players: [yellow_player_1, yellow_player_2, yellow_player_3, yellow_player_4] },
+    { group: 'BLUE', rank: 0, players: [blue_player_1, blue_player_2, blue_player_3, blue_player_4] },
+];
+
+var turn_oder = [];
+var current_turn_index = 0;
+var current_turn = turn_oder[current_turn_index];
+var dice_value = 0;
+
+function init() {
+    init_r = true;
+    if (checku('red')) {
+        $(".red-home .white-box .player-room").append(red_player_1.player + red_player_2.player + red_player_3.player + red_player_4.player);
+        turn_oder.push(turn_oder_lobby[0]);
+    }
+    if (checku('green')) {
+        $(".green-home .white-box .player-room").append(green_player_1.player + green_player_2.player + green_player_3.player + green_player_4.player);
+        turn_oder.push(turn_oder_lobby[1]);
+    }
+    if (checku('yellow')) {
+        $(".yellow-home .white-box .player-room").append(yellow_player_1.player + yellow_player_2.player + yellow_player_3.player + yellow_player_4.player);
+        turn_oder.push(turn_oder_lobby[2]);
+    }
+    if (checku('blue')) {
+        $(".blue-home .white-box .player-room").append(blue_player_1.player + blue_player_2.player + blue_player_3.player + blue_player_4.player);
+        turn_oder.push(turn_oder_lobby[3]);
+    }
+
+    // $(".winner-home .rwh").append($(".red-home .white-box .player-room").html());
+    // $(".winner-home .gwh").append($(".green-home .white-box .player-room").html());
+    // $(".winner-home .bwh").append($(".blue-home .white-box .player-room").html());
+    // $(".winner-home .ywh").append($(".yellow-home .white-box .player-room").html());
+
+    updateTurn(current_turn_index);
+
+
+}
+
+
+
+const sleep = (milliseconds) => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds))
+}
+
+
+
+
+
+$("#dice").click(function () {
+    if (stoptime) {
+        startTimer();
+    }
+    if (dice_value != 0) {
+        return false;
+    }
+    if (rank_count > (turn_oder.length - 2)) {
+        deactivateDice();
+
+        return false;
+    }
+    dice_value = Math.random() * (7 - 1) + 1;
+    dice_value = Math.floor(dice_value);
+    // dice_value=2;
+    // $("#dice").text(dice_value);
+    deactivateDice();
+
+    if (dice_value == 6) {
+        six_count++;
+    } else {
+        six_count = 0;
+    }
+    // console.log("Dice : ",dice_value);
+    dice_sound.play();
+    if (getActivePlayers(current_turn.players[0].home) == 0 && dice_value != 6) {
+        console.log(current_turn.group + " : no player is active , shifting turn to next player");
+        hold(hold_time).then(() => {
+            updateTurn(++current_turn_index);
+            activateDice();
+        });
+
+    } else if (!getHomePlayers(current_turn.players[0].home) && getActivePlayers(current_turn.players[0].home) == 0 && dice_value == 6) {
+        console.log(current_turn.group + " : you can't use this dice value, so shifting turn to next player");
+        hold(hold_time).then(() => {
+            updateTurn(++current_turn_index);
+            activateDice();
+        });
+    } else if (getActivePlayers(current_turn.players[0].home) == 1 && dice_value < 6) {
+        console.log(current_turn.group + " : you only have 1 active player so moving automatically");
+
+        hold(hold_time).then(() => {
+            for (i = 0; i < 4; i++) {
+                if (current_turn.players[i].status == 'active') {
+                    $(current_turn.players[i].controller + '').trigger("click");
+                }
+            }
+        });
+
+    } else if (getActivePlayers(current_turn.players[0].home) == 1 && getHomePlayers(current_turn.players[0].home) == 0 && dice_value == 6) {
+        console.log(current_turn.group + " : you only have 1 active player so moving automatically");
+
+        hold(hold_time).then(() => {
+            for (i = 0; i < 4; i++) {
+                if (current_turn.players[i].status == 'active') {
+                    $(current_turn.players[i].controller + '').trigger("click");
+                }
+            }
+        });
+
+    } else if (getHomePlayers(current_turn.players[0].home) == 1 && getActivePlayers(current_turn.players[0].home) == 0 && dice_value == 6) {
+        console.log(current_turn.group + " : you got 6 but , you don't have any active players and only 1 player in home so making it active");
+        hold(hold_time).then(() => {
+            for (i = 0; i < 4; i++) {
+                if (current_turn.players[i].status == 'home') {
+                    $(current_turn.players[i].controller + '').trigger("click");
+                }
+            }
+        });
+
+    }
+
+    //     if(getActivePlayers(current_turn.players[0].home)==0 && dice_value!=6){
+    //         ////console.log("no "+current_turn.group+" players is active");
+    //         var playermoved=false;
+    //         for(i=0;i<4;i++){
+
+    //             if( current_turn.players[i].status=='active' && current_turn.players[i].current_position+dice_value<=current_turn.players[i].path.length){
+    // $(current_turn.players[i].controller+'').trigger("click");
+    // playermoved=true;
+    //             }
+    //         }
+    //   hold(hold_time).then(()=>{
+    // if(!playermoved){
+    //     activateDice();
+    //     updateTurn(++current_turn_index);
+    // }
+    // });
+
+    //     }else if(getActivePlayers(current_turn.players[0].home)==1 && dice_value<6){
+    //         ////console.log("only 1 player is active, so running automatically");
+    //         for(i=0;i<4;i++){
+
+    //             if( current_turn.players[i].status=='active'){
+    // $(current_turn.players[i].controller+'').trigger("click");
+    //             }
+    //         }
+
+    //     }else if(getActivePlayers(current_turn.players[0].home)==0 && dice_value==6){
+    //         ////console.log("no player is active, making a player active");
+    //         hold(hold_time).then(()=>{
+    //             var need_to_go=true;
+    //             for(i=0;i<4;i++){
+
+    //                 if( current_turn.players[i].status=='home'){
+    //     $(current_turn.players[i].controller+'').trigger("click");
+    //     need_to_go=false;
+    //     break;
+    //                 }
+    //             }
+
+    //             if(need_to_go){
+    //                 activateDice();
+    //                 updateTurn(++current_turn_index);
+    //                 return 0;   
+    //             }
+
+
+    //         });
+
+
+
+    //     }
+});
+const hold = async (milliseconds) => {
+    ////console.log("holding for "+milliseconds/1000+" seconds");
+    await sleep(milliseconds);
+
+}
+// function updateTurn(cti){
+//     //console.log("Function Input : ",cti);
+//     if(rank_count>2){
+
+//         return 0;
+
+//     }
+// ////console.log("turn shifted to next player");
+
+//     $(".red_control").hide();
+//     $(".yellow_control").hide();
+//     $(".blue_control").hide();
+//     $(".green_control").hide();
+// $(".red-home").css("opacity","1");
+// $(".green-home").css("opacity","1");
+// $(".yellow-home").css("opacity","1");
+// $(".blue-home").css("opacity","1");
+
+// if(cti>turn_oder.length-1){
+
+//     current_turn_index=0;
+// }
+
+// current_turn=turn_oder[current_turn_index];
+// if(current_turn.rank>0){
+//     ++current_turn_index;
+//     if(current_turn_index>turn_oder.length-1){
+//         current_turn_index=0;
+//     }
+// current_turn=turn_oder[current_turn_index];  
+// }
+// if(current_turn.rank>0){
+//     ++current_turn_index;
+//     if(current_turn_index>turn_oder.length-1){
+//         current_turn_index=0;
+//     }
+// current_turn=turn_oder[current_turn_index];  
+// }
+// if(current_turn.rank>0){
+//     ++current_turn_index;
+//     if(current_turn_index>turn_oder.length-1){
+//         current_turn_index=0;
+//     }
+// current_turn=turn_oder[current_turn_index];  
+// }
+// if(current_turn.rank>0){
+//     ++current_turn_index;
+//     if(current_turn_index>turn_oder.length-1){
+//         current_turn_index=0;
+//     }
+// current_turn=turn_oder[current_turn_index];  
+// }
+// // //console.log(current_turn_index);
+// if(current_turn.group=='RED') $(".red_control").show();
+// if(current_turn.group=='GREEN') $(".green_control").show();
+// if(current_turn.group=='BLUE') $(".blue_control").show();
+// if(current_turn.group=='YELLOW') $(".yellow_control").show();
+// $(".current_turn").text(current_turn.group);
+// if(current_turn.rank<1){
+//     $(current_turn.players[0].home).css("opacity","0.5");
+
+// }
+
+// //console.log("CTI : ",current_turn_index);
+// //console.log("CURRENT USER : ",current_turn.group);
+// console.error("-------------------");
+
+// }
+function updateTurn(cti) {
+    if (rank_count > (turn_oder.length - 2)) {
+        return 0;
+    }
+    if (cti > (turn_oder.length - 1)) {
+        cti = 0;
+    }
+
+    if (turn_oder[cti].rank > 0) {
+        ++current_turn_index;
+        updateTurn(++cti);
+        return 0;
+    }
+
+    current_turn_index = cti;
+    current_turn = turn_oder[cti];
+    //console.log("current_player : ",current_turn.group);
+    $(".current_turn").text(current_turn.group);
+    $(".red_control").hide();
+    $(".yellow_control").hide();
+    $(".blue_control").hide();
+    $(".green_control").hide();
+    $(".red-home .white-box").css("transform", "scale(1)");
+    $(".green-home .white-box").css("transform", "scale(1)");
+    $(".yellow-home .white-box").css("transform", "scale(1)");
+    $(".blue-home .white-box").css("transform", "scale(1)");
+    if (current_turn.group == 'RED') $(".red_control").show();
+    if (current_turn.group == 'GREEN') $(".green_control").show();
+    if (current_turn.group == 'BLUE') $(".blue_control").show();
+    if (current_turn.group == 'YELLOW') $(".yellow_control").show();
+    // inout_sound.play();
+    $(current_turn.players[0].home + " .white-box").css("transform", "scale(1.15)");
+    six_count = 0;
+    if (bot[current_turn.group.toLowerCase()]) {
+        start_autorun();
+    }
+}
+
+function getActivePlayers(home) {
+    var active_players = 0;
+    if (home == ".red-home") {
+        if (red_player_1.status == 'active' && red_player_1.current_position + dice_value <= red_player_1.path.length) active_players++;
+        if (red_player_2.status == 'active' && red_player_2.current_position + dice_value <= red_player_2.path.length) active_players++;
+        if (red_player_3.status == 'active' && red_player_3.current_position + dice_value <= red_player_3.path.length) active_players++;
+        if (red_player_4.status == 'active' && red_player_4.current_position + dice_value <= red_player_4.path.length) active_players++;
+
+    }
+    if (home == ".green-home") {
+        if (green_player_1.status == 'active' && green_player_1.current_position + dice_value <= green_player_1.path.length) active_players++;
+        if (green_player_2.status == 'active' && green_player_2.current_position + dice_value <= green_player_2.path.length) active_players++;
+        if (green_player_3.status == 'active' && green_player_3.current_position + dice_value <= green_player_3.path.length) active_players++;
+        if (green_player_4.status == 'active' && green_player_4.current_position + dice_value <= green_player_4.path.length) active_players++;
+
+    }
+    if (home == ".yellow-home") {
+        if (yellow_player_1.status == 'active' && yellow_player_1.current_position + dice_value <= yellow_player_1.path.length) active_players++;
+        if (yellow_player_2.status == 'active' && yellow_player_2.current_position + dice_value <= yellow_player_2.path.length) active_players++;
+        if (yellow_player_3.status == 'active' && yellow_player_3.current_position + dice_value <= yellow_player_3.path.length) active_players++;
+        if (yellow_player_4.status == 'active' && yellow_player_4.current_position + dice_value <= yellow_player_4.path.length) active_players++;
+
+    }
+    if (home == ".blue-home") {
+        if (blue_player_1.status == 'active' && blue_player_1.current_position + dice_value <= blue_player_1.path.length) active_players++;
+        if (blue_player_2.status == 'active' && blue_player_2.current_position + dice_value <= blue_player_2.path.length) active_players++;
+        if (blue_player_3.status == 'active' && blue_player_3.current_position + dice_value <= blue_player_3.path.length) active_players++;
+        if (blue_player_4.status == 'active' && blue_player_4.current_position + dice_value <= blue_player_4.path.length) active_players++;
+
+    }
+    return active_players;
+}
+
+function getWinPlayers(home) {
+    var win_players = 0;
+    if (home == ".red-home") {
+        if (red_player_1.status == 'win') win_players++;
+        if (red_player_2.status == 'win') win_players++;
+        if (red_player_3.status == 'win') win_players++;
+        if (red_player_4.status == 'win') win_players++;
+
+    }
+    if (home == ".green-home") {
+        if (green_player_1.status == 'win') win_players++;
+        if (green_player_2.status == 'win') win_players++;
+        if (green_player_3.status == 'win') win_players++;
+        if (green_player_4.status == 'win') win_players++;
+
+    }
+    if (home == ".yellow-home") {
+        if (yellow_player_1.status == 'win') win_players++;
+        if (yellow_player_2.status == 'win') win_players++;
+        if (yellow_player_3.status == 'win') win_players++;
+        if (yellow_player_4.status == 'win') win_players++;
+
+    }
+    if (home == ".blue-home") {
+        if (blue_player_1.status == 'win') win_players++;
+        if (blue_player_2.status == 'win') win_players++;
+        if (blue_player_3.status == 'win') win_players++;
+        if (blue_player_4.status == 'win') win_players++;
+
+    }
+    return win_players;
+}
+
+function getHomePlayers(home) {
+    var home_players = 0;
+    if (home == ".red-home") {
+        if (red_player_1.status == 'home') home_players++;
+        if (red_player_2.status == 'home') home_players++;
+        if (red_player_3.status == 'home') home_players++;
+        if (red_player_4.status == 'home') home_players++;
+
+    }
+    if (home == ".green-home") {
+        if (green_player_1.status == 'home') home_players++;
+        if (green_player_2.status == 'home') home_players++;
+        if (green_player_3.status == 'home') home_players++;
+        if (green_player_4.status == 'home') home_players++;
+
+    }
+    if (home == ".yellow-home") {
+        if (yellow_player_1.status == 'home') home_players++;
+        if (yellow_player_2.status == 'home') home_players++;
+        if (yellow_player_3.status == 'home') home_players++;
+        if (yellow_player_4.status == 'home') home_players++;
+
+    }
+    if (home == ".blue-home") {
+        if (blue_player_1.status == 'home') home_players++;
+        if (blue_player_2.status == 'home') home_players++;
+        if (blue_player_3.status == 'home') home_players++;
+        if (blue_player_4.status == 'home') home_players++;
+
+    }
+    return home_players;
+}
+
+
+var isPlayerIsMoving = false;
+function movePlayer(M_Player, M_Step, M_Road) {
+    if (rank_count > (turn_oder.length - 2)) {
+        return 0;
+    }
+    if (isPlayerIsMoving) {
+        return 0;
+    }
+    if (M_Step == 0) {
+        console.log(M_Player.color + ' : Dice value is 0');
+        return 0;
+    }
+
+    if (M_Step == 6 && M_Player.status == 'home') {
+        M_Player.status = "active";
+        console.log(M_Player.color + ' : Player is active now');
+        var player_room_update = $(M_Player.home + " .white-box .player-room").html();
+        $(M_Player.home + " .white-box .player-room").html(player_room_update.replace(M_Player.player, ''));
+
+        M_Step = 1;
+    }
+    if (M_Step != 0 && M_Player.status == 'home') {
+        console.log(M_Player.color + ' : player is not active');
+
+        return 0;
+    }
+    if (M_Player.status != 'active') {
+        ////console.log('Player is not active');
+        activateDice();
+        return 0;
+    }
+
+    if (M_Player.current_position + M_Step > M_Player.path.length && getActivePlayers(M_Player.home) == 1) {
+        ////console.log('you need something less to run');
+        hold(hold_time).then(() => {
+            activateDice();
+            updateTurn(++current_turn_index);
+        });
+
+        return 0;
+    }
+
+    if (M_Player.current_position + M_Step > M_Player.path.length) {
+        ////console.log("you need something less");
+        return 0;
+    }
+
+
+    const run_point = [];
+    for (i = 0; i < M_Step; i++) {
+        run_point.push(1);
+    }
+    const moveNow = async () => {
+        ////console.log("player is running");
+        isPlayerIsMoving = true;
+        for (const item of run_point) {
+
+            M_Player.current_step = M_Road[M_Player.path[M_Player.current_position]];
+
+            if (M_Player.path[M_Player.current_position] == 'win') {
+                // alert("winner");
+                winner_sound.play();
+                M_Player.status = "win";
+                M_Player.previous_step = M_Road[M_Player.path[M_Player.current_position - 1]];
+                M_Player.previous_step.innerHTML = M_Player.previous_step.innerHTML.replace(M_Player.player, '');
+                //  var winner_home = $(".winner-home").html();
+                var pl = "";
+                if (M_Player.home == ".red-home") {
+                    pl = ".rwh";
+                }
+                if (M_Player.home == ".green-home") {
+
+                    pl = ".gwh";
+                }
+
+                if (M_Player.home == ".yellow-home") {
+
+                    pl = ".ywh";
+                }
+                if (M_Player.home == ".blue-home") {
+
+                    pl = ".bwh";
+                }
+
+                $(".winner-home " + pl).html($(".winner-home " + pl).html() + M_Player.player);
+
+                if (getWinPlayers(M_Player.home) > 3) {
+                    if (!current_turn.rank > 0) {
+                        current_turn.rank = ++rank_count;
+                        console.log(M_Player.color + " : You just got " + rank_count + " rank ");
+                    }
+                    //console.log("winner "+rank_count, current_turn.group);
+                    $(M_Player.home + " .white-box").css("background-image", "url(assets/img/crown" + rank_count + ".png)");
+
+
+                    $(M_Player.home).css("opacity", "1");
+
+                }
+                return 0;
+            } else {
+                if (M_Player.current_position != 0) {
+                    M_Player.previous_step = M_Road[M_Player.path[M_Player.current_position - 1]];
+                    M_Player.previous_step.innerHTML = M_Player.previous_step.innerHTML.replace(M_Player.player, '');
+
+                    M_Player.current_step.innerHTML = M_Player.current_step.innerHTML + M_Player.player;
+                } else {
+                    M_Player.current_step.innerHTML = M_Player.current_step.innerHTML + M_Player.player;
+
+
+                }
+                step_sound.play();
+                M_Player.current_position++;
+            }
+
+
+            await sleep(move_time)
+
+        }
+    }
+
+    moveNow().then(() => {
+        var kill_zone = steps[M_Player.path[M_Player.current_position - 1]];
+        if (kill_zone.children.length > 1 && !safe_stops.includes(M_Player.path[M_Player.current_position - 1])) {
+            // //console.log("you can kill someone");
+
+            for (i = 0; i < kill_zone.children.length; i++) {
+                var enemy = player_list[kill_zone.children[i].getAttribute("id")];
+
+                if (kill_zone.children[i] != M_Player.player && enemy.color != M_Player.color) {
+
+                    //console.log("you have a enemy in your zone");
+                    //console.log("Enemy",kill_zone.children[i].getAttribute("id"));
+                    //console.log("Enemy Dead Body",player_list[kill_zone.children[i].getAttribute("id")]);
+                    $(enemy.home + " .white-box .player-room").append(enemy.player);
+                    kill_zone.children[i].remove();
+                    dead_sound.play();
+                    enemy.resetplayer();
+                    isPlayerIsMoving = false;
+                    activateDice();
+                    return 0;
+                }
+            }
+        }
+
+
+        if (rank_count > (turn_oder.length - 2)) {
+            //console.log("game finished");
+            deactivateDice();
+            for (i = 0; i < turn_oder.length; i++) {
+                if (getWinPlayers(turn_oder[i].players[0].home) != 4) {
+                    //console.log(turn_oder[i].group + " is looser");
+                    break;
+                }
+            }
+            stopTimer();
+            // for(i=0;i<4;i++){
+            //     var pl_rank = turn_oder[i].rank;
+            //     var pl_name = turn_oder[i].group;
+            //     pl_name = pl_name.toLowerCase();
+            //     pl_name=pl_name.charAt(0).toUpperCase()+pl_name.slice(1);
+
+
+            //     if(pl_rank==0){
+            //      $("#r"+i).text(pl_name+" Player");
+            //      var pllogo = $("#r4").parent().children()[0];
+            //      $(pllogo).addClass("bg-"+pl_name.toLowerCase());
+
+            //     }
+
+
+
+
+            // }
+            // $(".gameover").css("display","");
+
+            return 0;
+        }
+        if (M_Player.status == 'win') {
+            if (current_turn.rank > 0) {
+                console.log("game finished for " + M_Player.color);
+
+
+
+                isPlayerIsMoving = false;
+                activateDice();
+                updateTurn(++current_turn_index);
+                return 0;
+            }
+            console.log("you just winned & getting an extra chance");
+            isPlayerIsMoving = false;
+            activateDice();
+            $(M_Player.controller).attr("disabled", true);
+            $(M_Player.controller).css("opacity", "0.6");
+            $(M_Player.controller).css("background-color", "grey");
+            return 0;
+        }
+
+        ////console.log("player is stopped running");
+
+        if (dice_value != 6) {
+            updateTurn(++current_turn_index);
+        }
+        if (six_count > 2) {
+            //console.log("you got 3 sixes");
+            updateTurn(++current_turn_index);
+        }
+        isPlayerIsMoving = false;
+        activateDice();
+    });
+
+
+}
+
+function activateDice() {
+    $("#dice").css("opacity", "1");
+    dice_value = 0;
+    // $("#dice").css("background-image","url('assets/img/dice"+dice_value+".png')");
+    $("#dice").html("<img src='assets/img/dice" + dice_value + ".png' class='dice'/>");
+
+    // $("#dice").attr("class","d"+dice_value);
+    // $("#dice_value").text("("+dice_value+")");
+    // $("#dice").text("0");
+    $("#dice").attr("disabled", false);
+}
+function deactivateDice() {
+    // $("#dice").css("background-image","url('assets/img/dice"+dice_value+".png')");
+    $("#dice").html("<img src='assets/img/dice" + dice_value + ".png' class='dice'/>");
+    // $("#dice").attr("class","d"+dice_value);
+
+    // $("#dice_value").text("("+dice_value+")");
+
+    $("#dice").css("opacity", "0.5");
+    $("#dice").attr("disabled", true);
+}
+
+
+
+
+$("#movered1").click(() => {
+    if (current_turn.group != "RED") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+
+    if (red_player_1.current_position + dice_value > red_player_1.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(red_player_1, dice_value, steps);
+});
+$("#movered2").click(() => {
+    if (current_turn.group != "RED") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (red_player_2.current_position + dice_value > red_player_2.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(red_player_2, dice_value, steps);
+});
+$("#movered3").click(() => {
+    if (current_turn.group != "RED") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (red_player_3.current_position + dice_value > red_player_3.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(red_player_3, dice_value, steps);
+});
+$("#movered4").click(() => {
+    if (current_turn.group != "RED") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (red_player_4.current_position + dice_value > red_player_4.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(red_player_4, dice_value, steps);
+});
+
+
+$("#movegreen1").click(() => {
+    if (current_turn.group != "GREEN") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (green_player_1.current_position + dice_value > green_player_1.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(green_player_1, dice_value, steps);
+});
+$("#movegreen2").click(() => {
+    if (current_turn.group != "GREEN") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (green_player_2.current_position + dice_value > green_player_2.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(green_player_2, dice_value, steps);
+});
+$("#movegreen3").click(() => {
+    if (current_turn.group != "GREEN") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (green_player_3.current_position + dice_value > green_player_3.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(green_player_3, dice_value, steps);
+});
+$("#movegreen4").click(() => {
+    if (current_turn.group != "GREEN") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (green_player_4.current_position + dice_value > green_player_4.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(green_player_4, dice_value, steps);
+});
+
+
+
+
+
+$("#moveyellow1").click(() => {
+    if (current_turn.group != "YELLOW") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (yellow_player_1.current_position + dice_value > yellow_player_1.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(yellow_player_1, dice_value, steps);
+});
+$("#moveyellow2").click(() => {
+    if (current_turn.group != "YELLOW") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (yellow_player_2.current_position + dice_value > yellow_player_2.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(yellow_player_2, dice_value, steps);
+});
+$("#moveyellow3").click(() => {
+    if (current_turn.group != "YELLOW") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (yellow_player_3.current_position + dice_value > yellow_player_3.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(yellow_player_3, dice_value, steps);
+});
+$("#moveyellow4").click(() => {
+    if (current_turn.group != "YELLOW") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (yellow_player_4.current_position + dice_value > yellow_player_4.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(yellow_player_4, dice_value, steps);
+});
+
+$("#moveblue1").click(() => {
+
+    if (current_turn.group != "BLUE") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (blue_player_1.current_position + dice_value > blue_player_1.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(blue_player_1, dice_value, steps);
+});
+
+
+$("#moveblue2").click(() => {
+
+    if (current_turn.group != "BLUE") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (blue_player_2.current_position + dice_value > blue_player_2.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(blue_player_2, dice_value, steps);
+});
+
+$("#moveblue3").click(() => {
+
+    if (current_turn.group != "BLUE") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (blue_player_3.current_position + dice_value > blue_player_3.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(blue_player_3, dice_value, steps);
+});
+
+$("#moveblue4").click(() => {
+
+    if (current_turn.group != "BLUE") {
+        console.log("wait for your turn, please");
+        return 0;
+    }
+    if (blue_player_4.current_position + dice_value > blue_player_4.path.length) {
+        console.log("dice value is too big for this player, try another player");
+        return 0;
+    }
+    movePlayer(blue_player_4, dice_value, steps);
+});
+
+
+$(".restartgame").click(() => {
+    location.reload();
+});

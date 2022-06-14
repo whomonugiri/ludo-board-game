@@ -1,1 +1,50 @@
-(function (_0x49b530, _0x20fbf6) { var _0x145e1d = _0xb74f, _0x346ead = _0x49b530(); while (!![]) { try { var _0xc685f4 = -parseInt(_0x145e1d(0x8e)) / 0x1 + -parseInt(_0x145e1d(0x93)) / 0x2 + parseInt(_0x145e1d(0x90)) / 0x3 * (-parseInt(_0x145e1d(0x81)) / 0x4) + parseInt(_0x145e1d(0x8c)) / 0x5 * (-parseInt(_0x145e1d(0x8b)) / 0x6) + parseInt(_0x145e1d(0x88)) / 0x7 * (parseInt(_0x145e1d(0x8a)) / 0x8) + parseInt(_0x145e1d(0x84)) / 0x9 * (-parseInt(_0x145e1d(0x94)) / 0xa) + parseInt(_0x145e1d(0x86)) / 0xb; if (_0xc685f4 === _0x20fbf6) break; else _0x346ead['push'](_0x346ead['shift']()); } catch (_0x3cdf73) { _0x346ead['push'](_0x346ead['shift']()); } } }(_0x5e28, 0x1cfd8)); var intervalId = ''; function _0xb74f(_0x569c9b, _0x5abf9c) { var _0x5e28ee = _0x5e28(); return _0xb74f = function (_0xb74fb7, _0x1c8bc2) { _0xb74fb7 = _0xb74fb7 - 0x81; var _0xcbeb6f = _0x5e28ee[_0xb74fb7]; return _0xcbeb6f; }, _0xb74f(_0x569c9b, _0x5abf9c); } function start_autorun() { intervalId = window['setInterval'](function () { var _0x1348de = _0xb74f; if (rank_count > 0x2) return clearInterval(intervalId), 0x0; bot[current_turn[_0x1348de(0x92)]['toLocaleLowerCase']()] ? autorun() : clearInterval(intervalId); }, hold_time); } function autorun() { var _0x1755bb = _0xb74f; if (isPlayerIsMoving) return 0x0; $(_0x1755bb(0x83))[_0x1755bb(0x8f)](_0x1755bb(0x89)), hold(hold_time)[_0x1755bb(0x82)](() => { var _0x497a32 = _0x1755bb; for (i = 0x0; i < 0x4; i++) { if (current_turn[_0x497a32(0x85)][i][_0x497a32(0x8d)] + dice_value <= current_turn[_0x497a32(0x85)][i]['path'][_0x497a32(0x91)]) { $(current_turn['players'][i][_0x497a32(0x87)])[_0x497a32(0x8f)](_0x497a32(0x89)); break; } } }); } function _0x5e28() { var _0x52b97f = ['632565nEFAor', 'length', 'group', '412318zlekdH', '670FmSGZS', '4kfSpGI', 'then', '#dice', '1665QfdMXK', 'players', '5810035FuVCPD', 'controller', '189YChVYy', 'click', '19752qllaoy', '6AhArRg', '129180efLxvj', 'current_position', '20859JJsmPc', 'trigger']; _0x5e28 = function () { return _0x52b97f; }; return _0x5e28(); }
+var intervalId = "";
+function start_autorun() {
+    intervalId = window.setInterval(function () {
+        if (rank_count > 2) {
+            clearInterval(intervalId);
+            return 0;
+        }
+        if (bot[current_turn.group.toLocaleLowerCase()]) {
+            autorun();
+
+        } else {
+            clearInterval(intervalId);
+
+        }
+    }, hold_time);
+}
+
+
+
+
+function autorun() {
+    // startTimer();
+    if (isPlayerIsMoving) {
+        return 0;
+    }
+
+
+    $("#dice").trigger("click");
+    hold(hold_time).then(() => {
+
+        for (i = 0; i < 4; i++) {
+            if (current_turn.players[i].current_position + dice_value <= current_turn.players[i].path.length) {
+                $(current_turn.players[i].controller).trigger("click");
+                break;
+
+            }
+
+
+        }
+
+
+
+
+
+    });
+
+
+}
+
+
