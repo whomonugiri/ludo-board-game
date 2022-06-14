@@ -1,3 +1,8 @@
+<!-- 
+Developed By DevNinja ("Monu Giri")
+Email : whodevninja@gmail.com
+Instagram : @oyeitsmg 
+-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +52,9 @@
 <span class="visually-hidden">Loading...</span>
 </div></button></div>
        </div>
+       <div>
+       <span>KEYBOARD CONTROLS</span> <br>   
+       <kbd>Space</kbd> for dice & <kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> for players</div>
        <hr>
 <div class="super-center">Developed By Dev Ninja /&nbsp;<a href="https://www.youtube.com/devninja" class="text-decoration-none" target="_blank">Follow</a></div> 
 
@@ -211,7 +219,7 @@
 <h1 class="green_control gc_name"></h1>
 <h1 class="yellow_control yc_name"></h1>
 <h1 class="blue_control bc_name"></h1>
-<button id="host_btn" class="restartgame" style="">Restart Game</button>
+<!-- <button id="host_btn" class="restartgame" style="">Restart Game</button> -->
 
 <!-- <div class="chatscreen">
 <input type="text" class="user_msg" placeholder="say something..."><button class="send_btn"></button>
@@ -230,3 +238,10 @@
 
 </body>
 </html>
+<!-- 
+Developed By DevNinja ("Monu Giri")
+Email : whodevninja@gmail.com
+Instagram : @oyeitsmg 
+-->
+
+<!-- Any use of this project without the permission of developer is restricted -->
