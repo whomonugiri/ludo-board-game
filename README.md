@@ -7,6 +7,6 @@
 <p>This is Responsive for Both Mobile and Laptop/Pc</p>
 
 You can play it at
--https://play-ludo-online.herokuapp.com/
+- https://offline-ludo.bgmi.fun/
 
 feel free to suggest edits
